@@ -12,6 +12,8 @@ gem 'unicorn'
 gem 'faraday'
 gem 'figaro'
 gem 'foundation-rails'
+gem 'omniauth'
+gem 'omniauth-strava'
 
 group :development, :test do
   gem 'byebug', platform: :mri
