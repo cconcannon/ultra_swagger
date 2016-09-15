@@ -1,12 +1,18 @@
 <div class="top-bar">
   <div class="top-bar-left">
     <ul class="menu">
-      <li class="menu-text">Ultra Swagger</li>
+      <li><%= link_to "Ultra Swagger", root_path %></li>
     </ul>
   </div>
   <div class="top-bar-right">
     <ul class="menu">
-      <li><%= link_to "Login with Strava", "/auth/strava" %></li>
+      <% if current_user %>
+        <li>Welcome, <%= current_user.firstname %>!</li>
+        <li><%= link_to "My Reviews", user_path(current_user) %>
+        <li><%= link_to "Logout", "/logout" %>
+      <% else %>
+        <li><%= link_to "Login with Strava", "/auth/strava" %></li>
+      <% end %>
     </ul>
   </div>
 </div>
