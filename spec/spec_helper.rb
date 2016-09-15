@@ -1,5 +1,8 @@
 require 'omniauth'
 require 'launchy'
+require 'simplecov'
+
+SimpleCov.start 'rails'
 
 OmniAuth.config.test_mode = true
 

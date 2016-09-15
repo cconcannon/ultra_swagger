@@ -5,18 +5,14 @@ class SessionsController < ApplicationController
       session[:user_id] = user.id
       user.update_attribute(:token, 
         request.env["omniauth.auth"]["credentials"]["token"])
-      flash[:success] = "Welcome, #{user.name}"
     rescue
-      flash[:warning] = "There was an error in the Strava Authentication process"
+      # session[:user_id] = nil
     end
-    redirect_to root_path
+    redirect_to user_path(user)
   end
   
   def destroy
-    if current_user
-      session.delete(:user_id)
-      flash[:success] = "You have successfully logged out!"
-    end
+    session.delete(:user_id) if current_user
     redirect_to root_path
   end
 end
