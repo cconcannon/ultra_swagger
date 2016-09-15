@@ -1,13 +1,20 @@
 require 'omniauth'
+require 'launchy'
 
 OmniAuth.config.test_mode = true
+
 omniauth_hash = {
-  strava_id: 000001,
-  name: "Test User",
-  email: "test_user@strava.com"
+  "extra" => {
+    "raw_info" => {
+      "id" => 123456,
+      "firstname" => "Test",
+      "lastname" => "User",
+      "email" => "test_user@strava.com"
+    }
+  }
 }
-OmniAuth.config.add_mock(:strava, omniauth_hash)
-  # User_model_data goes here
+
+OmniAuth.config.mock_auth[:strava] = OmniAuth::AuthHash.new(omniauth_hash)
 
 RSpec.configure do |config|
   # rspec-expectations config goes here. You can use an alternate
