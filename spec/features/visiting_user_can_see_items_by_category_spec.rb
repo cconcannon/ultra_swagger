@@ -11,7 +11,7 @@ RSpec.describe "visiting user shopping for gear" do
     expect(page).to have_link("Base Layers")
   end
 
-  xscenario "they navigate to the Shoes category page" do
+  scenario "they navigate to the Shoes category page" do
     visit "/"
     # and when I click "Shoes"
     click_link "Shoes"
