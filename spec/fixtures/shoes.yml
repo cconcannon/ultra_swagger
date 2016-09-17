@@ -29,3 +29,11 @@ boco_sol:
   avg_rating: 9
   type: Shoe
   image_path: http://www.believeintherun.com/wp-content/uploads/2014/09/hero.png
+  
+leadville_v3:
+  brand: New Balance
+  model: Leadville v3
+  sex: M
+  avg_rating: 8
+  type: Shoe
+  image_path: http://roadrunnersports.scene7.com/is/image/roadrunnersports/05306-407-ALT?iv=L4eTB3&wid=438&hei=350
