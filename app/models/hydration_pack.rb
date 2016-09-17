@@ -1,0 +1,2 @@
+class HydrationPack < Item
+end
