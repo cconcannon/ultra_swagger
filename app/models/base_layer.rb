@@ -1,0 +1,2 @@
+class BaseLayer < Item
+end

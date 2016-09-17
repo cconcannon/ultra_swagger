@@ -1,0 +1,2 @@
+class Hydration < Item
+end

@@ -10,10 +10,64 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160915192152) do
+ActiveRecord::Schema.define(version: 20160917170328) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "base_layers", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "hydrations", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "items", force: :cascade do |t|
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.string   "brand"
+    t.string   "model"
+    t.string   "sex"
+    t.integer  "performance"
+    t.integer  "annoyances"
+  end
+
+  create_table "outerwears", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "races", force: :cascade do |t|
+    t.string   "name"
+    t.string   "location"
+    t.string   "distance"
+    t.string   "temp_high"
+    t.string   "temp_low"
+    t.string   "trail_attr"
+    t.string   "climate"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "reviews", force: :cascade do |t|
+    t.integer  "race_id"
+    t.integer  "user_id"
+    t.integer  "item_id"
+    t.text     "comments"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["item_id"], name: "index_reviews_on_item_id", using: :btree
+    t.index ["race_id"], name: "index_reviews_on_race_id", using: :btree
+    t.index ["user_id"], name: "index_reviews_on_user_id", using: :btree
+  end
+
+  create_table "shoes", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.integer  "strava_id"
@@ -25,4 +79,7 @@ ActiveRecord::Schema.define(version: 20160915192152) do
     t.string   "lastname"
   end
 
+  add_foreign_key "reviews", "items"
+  add_foreign_key "reviews", "races"
+  add_foreign_key "reviews", "users"
 end
