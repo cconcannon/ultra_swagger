@@ -1,0 +1,23 @@
+vazee_summit:
+  brand: New Balance
+  model: Vazee Summit
+  sex: M
+  performance: 10
+  annoyances: 0
+  type: Shoe
+  
+speedcross_3:
+  brand: Salomon
+  model: Speedcross 3
+  sex: M
+  performance: 9
+  annoyances: 4
+  type: Shoe
+
+trail_glove:
+  brand: Merrell
+  model: Trail Glove
+  sex: M
+  performance: 8
+  annoyances: 6
+  type: Shoe

@@ -1,6 +1,11 @@
 require 'rails_helper'
 
 RSpec.describe "visiting user shopping for gear" do
+  fixtures :shoes
+  fixtures :hydration_packs
+  fixtures :outerwears
+  fixtures :base_layers
+  
   scenario "they see all the categories on the home page" do
     # When I visit the root path as a visiting user
     visit "/"
