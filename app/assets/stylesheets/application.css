@@ -47,7 +47,7 @@
   width: 50%;
   padding: 10px;
   font-family: Impact, "Arial Black", "sans serif";
-  color: rgb(0, 57, 228);
+  color: rgb(75, 75, 75);
 }  
 
 p {
@@ -56,14 +56,17 @@ p {
 
 h1 {
   font-family: Impact, "Arial Black", "sans serif";
+  color: rgb(75, 75, 75);
 }
 
 h2 {
   font-family: Impact, "Arial Black", "sans serif";
+  color: rgb(75, 75, 75);
 }
 
 h3 {
   font-family: Impact, "Arial Black", "sans serif";
+  color: rgb(75, 75, 75);
 }
 
 h4 {
@@ -81,4 +84,29 @@ h4 {
 .footer {
   background-color: rgb(75,75,75);
   color: rgb(255,255,255);
+}
+
+.index-item-container {
+  padding: 1rem 1rem 1rem 1rem;
+  max-width: 100%;
+  height: 450px;
+}
+  
+.index-item {
+  padding: 1rem 1rem 1rem 1rem;
+  max-width: 100%;
+  height: 100%;
+  border-color: rgb(75, 75, 75);
+  border-style: solid;
+  border-width: small;
+}
+
+.index-item-image {
+  max-width: 100%;
+  max-height: 300px;
+  padding: 1rem 1rem 1rem 1rem;
+}
+
+.hidden {
+  display: none;
 }

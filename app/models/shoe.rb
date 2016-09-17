@@ -1,0 +1,2 @@
+class Shoe < Item
+end

@@ -1,0 +1,2 @@
+class Outerwear < Item
+end

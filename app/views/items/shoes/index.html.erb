@@ -1,0 +1,16 @@
+<div class="fullwidth">
+  <img class="media" src="/assets/shoes_banner.jpg" alt="Two runners on technical trail, viewed from behind their feet">
+</div>
+
+<div class="row column text-center">
+  <div class="page-title">
+    <hr>
+    <h1>Shoe Reviews</h1>
+    <hr>
+  </div>
+  <div class="sorting-options text-center">
+    <h5>Brands: <%= link_to "New Balance","#/", id: "new-balance-link" %>, <%= link_to "Salomon", "#/", id: "salomon_link" %></h5>
+  </div>
+</div>
+
+<%= render partial: "partials/items_display" %>
