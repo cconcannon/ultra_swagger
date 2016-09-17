@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   root to: "welcome#index"
   
   resources :users, only: [:show]
-  namespace :reviews do
+  namespace :items do
     resources :hydration, only: [:index, :show]
     resources :outerwear, only: [:index, :show]
     resources :shoes, only: [:index, :show]

@@ -20,14 +20,16 @@ RSpec.describe "visiting user shopping for gear" do
     visit "/"
     # and when I click "Shoes"
     click_link "Shoes"
-    # I am taken to "root/reviews/shoes"
-    expect(current_path).to eq("/reviews/shoes")
-    # and I can see shoe models sorted by strava-weighted average ratings
-    expect(first(".item")).to have_content("Overall: 10/10")
-    expect(last(".item")).to have_content("Overall: 1/10")
-    # and I can see a list of shoe manufacturers
-    expect(page).to have_link("New Balance")
-    expect(page).to have_link("Salomon")
+    # I am taken to "root/items/shoes"
+    expect(current_path).to eq("/items/shoes")
+    # and I can see shoe models with average rating displayed
+    expect(first(".index-item")).to have_content("Average Rating")
+    expect(page).to have_selector(".index-item", count: 4)
+    # and I can see a list of shoe brands
+    within(".sorting-options") do
+      expect(page).to have_link("New Balance")
+      expect(page).to have_link("Salomon")
+    end
   end
 
   xscenario "they navigate to the Hydration category page" do
@@ -35,7 +37,7 @@ RSpec.describe "visiting user shopping for gear" do
     # and when I click "Hydration"
     click_link "Hydration"
     # I am taken to "root/reviews/hydration"
-    expect(current_path).to eq("/reviews/hydration")
+    expect(current_path).to eq("/items/hydration")
     # and I can see hydration packs sorted by strava-weighted average ratings
     expect(first(".item")).to have_content("Overall: 10/10")
     expect(last(".item")).to have_content("Overall: 1/10")
@@ -49,7 +51,7 @@ RSpec.describe "visiting user shopping for gear" do
     # and when I click "Outerwear"
     click_link "Outerwear"
     # I am taken to "root/reviews/outerwear"
-    expect(current_path).to eq("/reviews/outerwear")
+    expect(current_path).to eq("/items/outerwear")
     # and I can see outerwear models sorted by strava-weighted average ratings
     expect(first(".item")).to have_content("Overall: 10/10")
     expect(last(".item")).to have_content("Overall: 1/10")
@@ -63,7 +65,7 @@ RSpec.describe "visiting user shopping for gear" do
     # and when I click "Base Layers"
     click_link "Base Layers"
     # I am taken to "root/reviews/base_layers"
-    expect(current_path).to eq("/reviews/base_layers")
+    expect(current_path).to eq("/items/base_layers")
     # and I can see base layer models sorted by strava-weighted average ratings
     expect(first(".item")).to have_content("Overall: 10/10")
     expect(last(".item")).to have_content("Overall: 1/10")

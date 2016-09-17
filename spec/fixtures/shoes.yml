@@ -2,22 +2,30 @@ vazee_summit:
   brand: New Balance
   model: Vazee Summit
   sex: M
-  performance: 10
-  annoyances: 0
+  avg_rating: 10 
   type: Shoe
+  image_path: http://s7d5.scene7.com/is/image/NB/mtsumbg_nb_14_i?$dw_temp_default_gallery$
   
 speedcross_3:
   brand: Salomon
   model: Speedcross 3
   sex: M
-  performance: 9
-  annoyances: 4
+  avg_rating: 8
   type: Shoe
+  image_path: http://gearx.com/blog/wp-content/uploads/2012/05/salomon-speedcross-3-trail-racin-17641-f.jpeg
 
 trail_glove:
   brand: Merrell
   model: Trail Glove
   sex: M
-  performance: 8
-  annoyances: 6
+  avg_rating: 6
   type: Shoe
+  image_path: http://fittechnica.co.uk/fittechnica/wp-content/uploads/2013/06/Merrell-Trail-Glove-Yellow-2.jpg
+  
+boco_sol:
+  brand: Newton
+  model: Boco Sol
+  sex: M
+  avg_rating: 9
+  type: Shoe
+  image_path: http://www.believeintherun.com/wp-content/uploads/2014/09/hero.png
