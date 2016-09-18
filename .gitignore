@@ -21,6 +21,3 @@
 
 # Ignore SimpleCov files
 coverage
-
-# Ignore Test directory (using RSpec)
-test

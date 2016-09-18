@@ -10,6 +10,7 @@ class StravaUserTotal < ApplicationRecord
     update_avg_weekly_time
     update_avg_weekly_elevation_gain
     update_avg_speed
+    self.save
   end
   
   

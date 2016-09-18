@@ -1,10 +1,10 @@
 class SessionsController < ApplicationController
   def create
     begin
-      user = User.from_omniauth(request.env["omniauth.auth"])
+      strava_user_data = request.env["omniauth.auth"]
+      user = User.from_omniauth(strava_user_data)
       session[:user_id] = user.id
-      user.update_attribute(:token, 
-        request.env["omniauth.auth"]["credentials"]["token"])
+      user.update_strava_user_total
     rescue
       # session[:user_id] = nil
     end

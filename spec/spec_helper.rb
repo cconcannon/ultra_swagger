@@ -1,6 +1,7 @@
 require 'omniauth'
 require 'launchy'
 require 'simplecov'
+require 'vcr'
 
 SimpleCov.start 'rails'
 
@@ -14,6 +15,9 @@ omniauth_hash = {
       "lastname" => "User",
       "email" => "test_user@strava.com"
     }
+  },
+  "credentials" => {
+    "token" => 1234567890
   }
 }
 
