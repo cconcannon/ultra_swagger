@@ -24,11 +24,10 @@ RSpec.describe "visiting user shopping for gear" do
     expect(current_path).to eq("/items/shoes")
     # and I can see shoe models with average rating displayed
     expect(first(".index-item")).to have_content("Average Rating")
-    expect(page).to have_selector(".index-item", count: 4)
+    expect(page).to have_selector(".index-item", count: 5)
     # and I can see a list of shoe brands
-    within(".sorting-options") do
-      expect(page).to have_link("New Balance")
-      expect(page).to have_link("Salomon")
+    within(".filter-options-container") do
+      expect(page).to have_selector(".brand-checkboxes", count: 4)
     end
   end
 
