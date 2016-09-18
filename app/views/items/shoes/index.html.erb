@@ -2,14 +2,19 @@
   <img class="media" src="/assets/shoes_banner.jpg" alt="Two runners on technical trail, viewed from behind their feet">
 </div>
 
-<div class="row column text-center">
+<div class="row text-center">
   <div class="page-title">
     <hr>
     <h1>Shoe Reviews</h1>
     <hr>
   </div>
-  <div class="sorting-options text-center">
-    <h5>Brands: <%= link_to "New Balance","#/", id: "new-balance-link" %>, <%= link_to "Salomon", "#/", id: "salomon_link" %></h5>
+  <div class="filter-options-container text-center">
+    <h5>Brands:
+      <% @brands.each do |brand| %>
+        <%= check_box_tag 'brands[]', brand, true, class: "brand-checkboxes", id: "#{brand}-checkbox" %>
+        <label for='<%= brand %>-checkbox'><h5><%= brand %></h5></label>
+      <% end %>
+    </h5>
   </div>
 </div>
 
