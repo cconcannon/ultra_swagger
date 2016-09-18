@@ -1,4 +1,4 @@
-class Reviews::HydrationPacksController < ApplicationController
+class Items::HydrationPacksController < ApplicationController
   def index
   end
   

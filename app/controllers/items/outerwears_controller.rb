@@ -1,4 +1,4 @@
-class Reviews::OuterwearsController < ApplicationController
+class Items::OuterwearsController < ApplicationController
   def index
   end
   

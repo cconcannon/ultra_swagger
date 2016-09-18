@@ -1,4 +1,4 @@
-class Reviews::BaseLayersController < ApplicationController
+class Items::BaseLayersController < ApplicationController
   def index
   end
   
