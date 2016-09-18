@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160918185648) do
+ActiveRecord::Schema.define(version: 20160918195606) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -74,10 +74,11 @@ ActiveRecord::Schema.define(version: 20160918185648) do
   create_table "strava_user_totals", force: :cascade do |t|
     t.integer  "user_id"
     t.integer  "avg_weekly_distance"
-    t.decimal  "avg_weekly_time"
+    t.float    "avg_weekly_time"
     t.integer  "avg_weekly_elevation_gain"
     t.datetime "created_at",                null: false
     t.datetime "updated_at",                null: false
+    t.float    "avg_speed"
     t.index ["user_id"], name: "index_strava_user_totals_on_user_id", using: :btree
   end
 

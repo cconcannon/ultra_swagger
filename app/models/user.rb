@@ -1,4 +1,6 @@
 class User < ApplicationRecord
+  belongs_to :strava_user_total
+  
   validates :strava_id, uniqueness: true
   validates :email, uniqueness: true
   validates :firstname, presence: true
