@@ -2,20 +2,12 @@
   <img class="media" src="/assets/shoes_banner.jpg" alt="Two runners on technical trail, viewed from behind their feet">
 </div>
 
-<div class="row text-center">
-  <div class="page-title">
-    <hr>
-    <h1>Shoe Reviews</h1>
-    <hr>
-  </div>
-  <div class="filter-options-container text-center">
-    <h5>Brands:
-      <% @brands.each do |brand| %>
-        <%= check_box_tag 'brands[]', brand, true, class: "brand-checkboxes", id: "#{brand}-checkbox" %>
-        <label for='<%= brand %>-checkbox'><h5><%= brand %></h5></label>
-      <% end %>
-    </h5>
-  </div>
+<div class="row text-center page-title">
+  <hr>
+  <h1>Shoe Reviews</h1>
+  <hr>
 </div>
+  
+<%= render partial: "partials/brand_checkbox_filter" %>
 
 <%= render partial: "partials/items_display" %>

@@ -39,11 +39,20 @@ class Seed
   end
   
   def chris_hydration_pack_reviews
+    hydration_packs.values.each do |hp|
+      HydrationPack.create(hp)
+      puts "#{hp["brand"]} #{hp["model"]} created!"
+    end
   end
   
   def shoes
     YAML.load(File.read("db/fixtures/shoes.yml"))
   end
+  
+  def hydration_packs
+    YAML.load(File.read("db/fixtures/hydration_packs.yml"))
+  end
+  
 end
 
 Seed.new
