@@ -9,9 +9,10 @@
 class Seed
   def initialize
     chris_admin_user
-    chris_shoe_reviews
-    chris_outerwear_reviews
-    chris_hydration_pack_reviews
+    chris_shoes
+    chris_outerwear
+    chris_hydration_packs
+    chris_base_layers
   end
   
   private
@@ -19,33 +20,31 @@ class Seed
   def chris_admin_user
   end
   
-  def chris_shoe_reviews
+  def chris_shoes
     shoes.values.each do |shoe|
       Shoe.create(shoe)
       puts "#{shoe["brand"]} #{shoe["model"]} created!"
     end
   end
-    # Shoe.create({
-    #   brand: New Balance,
-    #   model: Vazee Summit,
-    #   sex: M,
-    #   avg_rating: 10,
-    #   type: Shoe,
-    #   image_path: http://s7d5.scene7.com/is/image/NB/mtsumbg_nb_14_i?$dw_temp_default_gallery$
-    #   comments: "This is a great lightweight shoe with grippy rubber and a relatively pliable sole. I used it during the Leadville Silver Rush 50, Angeles Crest 100, and Silverton Double Dirty 30 all without ever changing my shoes. It's my go-to for all trail running."
-    # })
-  
-  def chris_outerwear_reviews
+
+  def chris_outerwear
     outerwear.values.each do |jacket|
       Outerwear.create(jacket)
       puts "#{jacket["brand"]} #{jacket["model"]} created!"
     end
   end
   
-  def chris_hydration_pack_reviews
+  def chris_hydration_packs
     hydration_packs.values.each do |hp|
       HydrationPack.create(hp)
       puts "#{hp["brand"]} #{hp["model"]} created!"
+    end
+  end
+  
+  def chris_base_layers
+    base_layers.values.each do |bl|
+      BaseLayer.create(bl)
+      puts "#{bl["brand"]} #{bl["model"]} created!"
     end
   end
   
@@ -59,6 +58,10 @@ class Seed
   
   def outerwear
     YAML.load(File.read("db/seeds/outerwear.yml"))
+  end
+  
+  def base_layers
+    YAML.load(File.read("db/seeds/base_layers.yml"))
   end
 end
 
