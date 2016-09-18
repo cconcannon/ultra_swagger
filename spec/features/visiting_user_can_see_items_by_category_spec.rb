@@ -27,22 +27,22 @@ RSpec.describe "visiting user shopping for gear" do
     expect(page).to have_selector(".index-item", count: 5)
     # and I can see a list of shoe brands
     within(".filter-options-container") do
-      expect(page).to have_selector(".brand-checkboxes", count: 4)
+      expect(page).to have_selector(".brand-checkboxes")
     end
   end
 
-  xscenario "they navigate to the Hydration category page" do
+  scenario "they navigate to the Hydration category page" do
     visit "/"
     # and when I click "Hydration"
     click_link "Hydration"
     # I am taken to "root/reviews/hydration"
-    expect(current_path).to eq("/items/hydration")
+    expect(current_path).to eq("/items/hydration_packs")
     # and I can see hydration packs sorted by strava-weighted average ratings
-    expect(first(".item")).to have_content("Overall: 10/10")
-    expect(last(".item")).to have_content("Overall: 1/10")
+    expect(first(".index-item")).to have_content("Average Rating")
     # and I can see a list of hydration pack manufacturers
     expect(page).to have_link("Ultimate Direction")
-    expect(page).to have_link("Salomon")
+    expect(page).to have_link("Ultraspire")
+    expect(page).to have_link("Mountain Hardwear")
   end
 
   xscenario "they navigate to the Outerwear category page" do
