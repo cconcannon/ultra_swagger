@@ -42,7 +42,7 @@ class Seed
   end
   
   def shoes
-    YAML.load(File.read("spec/fixtures/shoes.yml"))
+    YAML.load(File.read("db/fixtures/shoes.yml"))
   end
 end
 
