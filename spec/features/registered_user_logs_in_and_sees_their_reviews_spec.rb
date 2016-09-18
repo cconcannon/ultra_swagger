@@ -5,7 +5,7 @@ RSpec.describe "logged in user is on the home page" do
   fixtures :users
   
   
-  scenario "they visit their account page" do
+  scenario "they visit their reviews page" do
     # As a logged in user when I visit "root"
     page.set_rack_session(user_id: 1)
     visit "/"
@@ -14,8 +14,18 @@ RSpec.describe "logged in user is on the home page" do
     # and I see "Welcome, Christopher"
     expect(page).to have_content("Welcome, Christopher")
     # and I can see all my approved reviews listed by date descending
+    within("#user-1-approved-reviews") do
+      expect(page).to have_selector(".user-review", count: 2)
+      expect(first(".user-review")).to have_content("January 1, 2016")
+      expect(last(".user-review")).to have_content("January 1, 2015")
+    end
     # and I can see all my pending reviews listed by date descending
-    # and I see a link to "Submit a new product review"
-    # and I can see my Strava statistics which get tagged to new reviews
+    within("#user-1-pending-reviews") do
+      expect(page).to have_selector(".user-review", count: 2)
+      expect(first(".user-review")).to have_content("January 1, 2016")
+      expect(last(".user-review")).to have_content("January 1, 2015")
+    end
+    # and I see a link to "Create a product review"
+    expect(page).to have_link("Create A Product Review")
   end
 end
