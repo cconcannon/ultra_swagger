@@ -36,6 +36,10 @@ class Seed
     # })
   
   def chris_outerwear_reviews
+    outerwear.values.each do |jacket|
+      Outerwear.create(jacket)
+      puts "#{jacket["brand"]} #{jacket["model"]} created!"
+    end
   end
   
   def chris_hydration_pack_reviews
@@ -46,13 +50,16 @@ class Seed
   end
   
   def shoes
-    YAML.load(File.read("db/fixtures/shoes.yml"))
+    YAML.load(File.read("db/seeds/shoes.yml"))
   end
   
   def hydration_packs
-    YAML.load(File.read("db/fixtures/hydration_packs.yml"))
+    YAML.load(File.read("db/seeds/hydration_packs.yml"))
   end
   
+  def outerwear
+    YAML.load(File.read("db/seeds/outerwear.yml"))
+  end
 end
 
 Seed.new

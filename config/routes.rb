@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   resources :users, only: [:show]
   namespace :items do
     resources :hydration_packs, only: [:index, :show]
-    resources :outerwears, only: [:index, :show]
+    resources :outerwear, only: [:index, :show]
     resources :shoes, only: [:index, :show]
     resources :base_layers, only: [:index, :show]
   end

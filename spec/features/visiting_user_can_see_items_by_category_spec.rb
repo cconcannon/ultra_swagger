@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe "visiting user shopping for gear" do
   fixtures :shoes
   fixtures :hydration_packs
-  fixtures :outerwears
+  fixtures :outerwear
   fixtures :base_layers
   
   scenario "they see all the categories on the home page" do
@@ -45,15 +45,14 @@ RSpec.describe "visiting user shopping for gear" do
     expect(page).to have_link("Mountain Hardwear")
   end
 
-  xscenario "they navigate to the Outerwear category page" do
+  scenario "they navigate to the Outerwear category page" do
     visit "/"
     # and when I click "Outerwear"
     click_link "Outerwear"
     # I am taken to "root/reviews/outerwear"
     expect(current_path).to eq("/items/outerwear")
     # and I can see outerwear models sorted by strava-weighted average ratings
-    expect(first(".item")).to have_content("Overall: 10/10")
-    expect(last(".item")).to have_content("Overall: 1/10")
+    expect(first(".index-item")).to have_content("Average Rating")
     # and I can see a list of outerwear manufacturers
     expect(page).to have_link("Patagonia")
     expect(page).to have_link("Marmot")

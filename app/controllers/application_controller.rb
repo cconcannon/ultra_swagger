@@ -11,7 +11,7 @@ class ApplicationController < ActionController::Base
   end
 
   def shoe_brands
-    @brands = Item.pluck("brand").uniq
+    @brands = Shoe.pluck("brand").uniq
   end
   
   def hydration_pack_brands
