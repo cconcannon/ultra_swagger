@@ -5,7 +5,7 @@ class StravaUserTotal < ApplicationRecord
     @service ||= StravaUserTotalService.new(user)
   end
   
-  def update_data
+  def initialize
     update_avg_weekly_distance
     update_avg_weekly_time
     update_avg_weekly_elevation_gain
