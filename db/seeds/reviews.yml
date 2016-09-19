@@ -1,43 +1,43 @@
 review_1:
-  race: :ac100
-  user: :chris
-  item: :vazee_summit
+  race: ac100
+  user: chris
+  item: vazee_summit
   rating: 10
   comments: Grippy in the wet stuff, yet lightweight and flexible. Supportive enough for 100 miles. My go-to shoe for everything on trail. 
   approved: true
   reviewed: true
 
 review_2:
-  race: :ac100
-  user: :chris
-  item: :ud_to2
+  race: ac100
+  user: chris
+  item: ud_to2
   rating: 8
   comments: Lightweight and breathable, but still somewhat 'bouncy'... I ended up modifying the pack so that the bottles sit higher. Out of the box, it's not as great a fit as their AK vest. Nice size for warm-weather ultras.
   approved: true
   reviewed: true
   
 review_3:
-  race: :leadville_50
-  user: :chris
-  item: :salomon_short_tights
+  race: leadville_50
+  user: chris
+  item: salomon_short_tights
   rating: 10
   comments: These are my go-to for all runs longer than a few hours. They're a little warm for hot weather running, but otherwise perfect. The built-in liner is a great feature. 
   approved: true
   reviewed: true
   
 review_4: 
-  race: :silverton_dd30  
-  user: :chris
-  item: :houdini
+  race: silverton_dd30  
+  user: chris
+  item: houdini
   rating: 10
   comments: Greatest lightweight shell, ever! Not waterproof, but it does the job as an emergency layer (or extremely lightweight wind blocker).
   approved: false
   reviewed: false
   
 review_5:
-  race: :leadville_50
-  user: :chris
-  item: :salomon_short_tights
+  race: leadville_50
+  user: chris
+  item: salomon_short_tights
   rating: 10
   comments: blah blah blah didn't finish writing...
   approved: false
