@@ -18,7 +18,7 @@ leadville_50:
   trail_attr: smooth
   climate: dry
   
-silverton:
+silverton_dd30:
   name: Silverton Double Dirty 30
   date: 2016-09-24
   location: Silverton, CO

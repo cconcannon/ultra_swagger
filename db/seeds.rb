@@ -14,11 +14,19 @@ class Seed
     chris_outerwear
     chris_hydration_packs
     chris_base_layers
+    chris_reviews
   end
   
   private
   
   def chris_admin_user
+    User.create(
+      strava_id: 5189780,
+      email: "christopher.concannon@gmail.com",
+      firstname: "Christopher",
+      lastname: "Concannon",
+      admin: true
+    )
   end
   
   def chris_races
@@ -56,6 +64,13 @@ class Seed
     end
   end
   
+  def chris_reviews
+    reviews.each do |review|
+      r = Review.create(review)
+      puts "Review ##{r.id} created!"
+    end
+  end
+  
   def shoes
     YAML.load(File.read("db/seeds/shoes.yml"))
   end
@@ -74,6 +89,52 @@ class Seed
   
   def races
     YAML.load(File.read("db/seeds/races.yml"))
+  end
+
+  def reviews
+    [ 
+      { race: Race.find_by(name: "Angeles Crest 100"),
+        user: User.find_by(strava_id: 5189780),
+        item: Item.find_by(model: "Vazee Summit"),
+        rating: 10,
+        comments: "Grippy in the wet stuff, yet lightweight and flexible. Supportive enough for 100 miles. My go-to shoe for everything on trail.",
+        approved: true,
+        reviewed: true
+      },
+      { race: Race.find_by(name: "Angeles Crest 100"),
+        user: User.find_by(strava_id: 5189780),
+        item: Item.find_by(model: "Timothy Olson Race Vest 3.0"),
+        rating: 8,
+        comments: "Lightweight and breathable, but still somewhat 'bouncy'... I ended up modifying the pack so that the bottles sit higher. Out of the box, it's not as great a fit as their AK vest. Nice size for warm-weather ultras.",
+        approved: true,
+        reviewed: true
+      },
+      { race: Race.find_by(name: "Leadville Silver Rush 50"),
+        user: User.find_by(strava_id: 5189780),
+        item: Item.find_by(model: "Short Tight"),
+        rating: 10,
+        comments: "These are my go-to for all runs longer than a few hours. They're a little warm for hot weather running, but otherwise perfect. The built-in liner is a great feature.",
+        approved: true,
+        reviewed: true
+      },
+      { race: Race.find_by(name: "Silverton Double Dirty 30"),
+        user: User.find_by(strava_id: 5189780),
+        item: Item.find_by(model: "Houdini"),
+        rating: 10,
+        comments: "Greatest lightweight shell, ever! Not waterproof, but it does the job as an emergency layer (or extremely lightweight wind blocker).",
+        approved: false,
+        reviewed: false
+      },
+      { race: Race.find_by(name: "Leadville Silver Rush 50"),
+        user: User.find_by(strava_id: 5189780),
+        item: Item.find_by(model: "Short Tight"),
+        rating: 10,
+        comments: "blah blah blah didn't finish",
+        approved: false,
+        reviewed: true,
+        admin_comments: "Duplicate Review"
+      } 
+    ]
   end
 end
 

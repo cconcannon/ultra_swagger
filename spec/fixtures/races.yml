@@ -1,4 +1,5 @@
 ac100:
+  id: 1
   name: Angeles Crest 100
   date: 2016-08-06
   location: Los Angeles, CA
@@ -9,6 +10,7 @@ ac100:
   climate: dry
   
 leadville_50:
+  id: 2
   name: Leadville Silver Rush 50
   date: 2016-07-10
   location: Leadville, CO
@@ -19,6 +21,7 @@ leadville_50:
   climate: dry
   
 silverton:
+  id: 3
   name: Silverton Double Dirty 30
   date: 2016-09-24
   location: Silverton, CO
