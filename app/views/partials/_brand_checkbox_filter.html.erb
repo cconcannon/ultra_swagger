@@ -1,6 +1,6 @@
 <div class="filter-options-container text-center">
   <h5>Brands:
-    <% @brands.each do |brand| %>
+    <% brands.each do |brand| %>
       <%= check_box_tag 'brands[]', brand, true, class: "brand-checkboxes", id: "#{brand}-checkbox" %>
       <label for='<%= brand %>-checkbox'><h5><%= brand %></h5></label>
     <% end %>

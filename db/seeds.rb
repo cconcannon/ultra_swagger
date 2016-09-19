@@ -24,7 +24,7 @@ class Seed
   def chris_races
     races.values.each do |race|
       Race.create(race)
-      puts "#{race.name} in #{race.location} added to race list!"
+      puts "#{race["name"]} in #{race["location"]} added to race list!"
     end
   end
   
@@ -70,6 +70,10 @@ class Seed
   
   def base_layers
     YAML.load(File.read("db/seeds/base_layers.yml"))
+  end
+  
+  def races
+    YAML.load(File.read("db/seeds/races.yml"))
   end
 end
 
