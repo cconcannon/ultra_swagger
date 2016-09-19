@@ -4,11 +4,12 @@ Rails.application.routes.draw do
   resources :users, only: [:show]
   resources :reviews, only: [:new, :create]
   namespace :items do
-    resources :hydration_packs, only: [:index, :show]
-    resources :outerwear, only: [:index, :show]
-    resources :shoes, only: [:index, :show]
-    resources :base_layers, only: [:index, :show]
+    resources :hydration_packs, only: [:index]
+    resources :outerwear, only: [:index]
+    resources :shoes, only: [:index]
+    resources :base_layers, only: [:index]
   end
+  resources :items, only: [:show]
   
   get "/auth/strava/callback", to: "sessions#create"
   get "/logout", to: "sessions#destroy"

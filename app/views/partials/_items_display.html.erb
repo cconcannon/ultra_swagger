@@ -2,7 +2,7 @@
   <% items.each do |item| %>
     <div class='column index-item-container', data-brand="<%= item.brand %>">
       <div class='column text-center index-item'>
-        <%= link_to "#{item.brand} #{item.model}", "/items/#{item.class.name.downcase.concat('s')}/#{item.id}", class: "button callout" %>
+        <%= link_to "#{item.brand} #{item.model}", item_path(item), class: "button callout" %>
         <p>Average Rating: <%= item.avg_rating %></p>
         <%= image_tag(item.image_path, alt: item.brand + " " + item.model, class: "index-item-image") %>
         <br>
