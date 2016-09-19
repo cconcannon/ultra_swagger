@@ -11,69 +11,18 @@
 <h3 class="text-center"><%= @user.firstname %>'s Reviews</h3>
 <div class='text-center'id='user-<%= @user.id %>-approved-reviews'>
   <h4>Approved Reviews</h4>
-  <table>
-    <tr>
-      <th>Review Date</th>
-      <th>Item Name</th>
-      <th>Rating</th>
-      <th>Race</th>
-    </tr>
-    <% @approved_reviews.each do |review| %>
-      <div class='user-review'>
-        <tr>
-          <td><%= review.created_at %></td>
-          <td><%= review.item.brand + " " + review.item.model %></td>
-          <td><%= review.rating %></td>
-          <td><%= review.race.name %></td>
-        </tr>
-      </div>
-    <% end %>
-  </table>
+  <%= render partial: "partials/user_reviews_table", locals: { reviews: @approved_reviews } %>
   <hr>
 </div>
 <div class='text-center' id='user-<%= @user.id %>-pending-reviews'>
   <h4>Pending Reviews</h4>
-  <table>
-    <tr>
-      <th>Review Date</th>
-      <th>Item Name</th>
-      <th>Rating</th>
-      <th>Race</th>
-    </tr>
-    <% @pending_reviews.each do |review| %>
-      <div class='user-review'>
-        <tr>
-          <td><%= review.created_at %></td>
-          <td><%= review.item.brand + " " + review.item.model %></td>
-          <td><%= review.rating %></td>
-          <td><%= review.race.name %></td>
-        </tr>
-      </div>
-    <% end %>
-  </table>
+  <%= render partial: "partials/user_reviews_table", locals: { reviews: @pending_reviews } %>
   <hr>
 </div>
 
 <div class='text-center' id='user-<%= @user.id %>-rejected-reviews'>
   <h4>Rejected Reviews</h4>
-  <table>
-    <tr>
-      <th>Review Date</th>
-      <th>Item Name</th>
-      <th>Rating</th>
-      <th>Race</th>
-    </tr>
-    <% @rejected_reviews.each do |review| %>
-      <div class='user-review'>
-        <tr>
-          <td><%= review.created_at %></td>
-          <td><%= review.item.brand + " " + review.item.model %></td>
-          <td><%= review.rating %></td>
-          <td><%= review.race.name %></td>
-        </tr>
-      </div>
-    <% end %>
-  </table>
+  <%= render partial: "partials/user_reviews_table", locals: { reviews: @rejected_reviews } %>
   <hr>
 </div>
 <div class="row text-center">

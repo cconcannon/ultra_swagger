@@ -1,0 +1,13 @@
+<div class="text-center page-title">
+  <h1><%= @item.brand + " " + @item.model %></h1>
+  <hr>
+</div>
+<div class="row text-center">
+  <%= image_tag(@item.image_path, alt: "#{@item.brand} #{@item.model}", class: "thumbnail") %>
+</div>
+<div class="row text-center">
+  <hr>
+  <h3>User Reviews</h3>
+  <%= render partial: "partials/item_reviews_table", locals: { reviews: @reviews } %>
+</div>
+  
