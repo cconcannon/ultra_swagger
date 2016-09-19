@@ -25,6 +25,6 @@ RSpec.describe "logged in user is on the home page" do
       expect(page).to have_selector(".user-review", count: 1)
     end
     # and I see a link to "Create a product review"
-    expect(page).to have_link("Create A Product Review")
+    expect(page).to have_link("Submit A Product Review")
   end
 end
