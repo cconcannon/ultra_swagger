@@ -1,10 +1,17 @@
 require 'omniauth'
 require 'launchy'
 require 'simplecov'
+require 'vcr'
+require 'webmock/rspec'
 
 SimpleCov.start 'rails'
 
 OmniAuth.config.test_mode = true
+
+VCR.configure do |c|
+  c.cassette_library_dir = 'fixtures/.cassettes'
+  c.hook_into :webmock
+end
 
 omniauth_hash = {
   "extra" => {
@@ -14,6 +21,9 @@ omniauth_hash = {
       "lastname" => "User",
       "email" => "test_user@strava.com"
     }
+  },
+  "credentials" => {
+    "token" => 1234567890
   }
 }
 

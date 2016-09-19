@@ -18,6 +18,8 @@ gem 'omniauth-strava'
 group :development, :test do
   gem 'byebug', platform: :mri
   gem 'pry-rails'
+  gem 'vcr'
+  gem 'webmock'
 end
 
 group :development do
@@ -33,6 +35,7 @@ group :test do
   gem 'shoulda-matchers'
   gem 'database_cleaner'
   gem 'simplecov', require: false
+  gem 'rack_session_access'
 end
 
 group :production do
