@@ -6,7 +6,6 @@ RSpec.describe "logged in user is on the home page" do
   
   
   xscenario "they visit their reviews page" do
-    # As a logged in user when I visit "root"
     page.set_rack_session(user_id: 1)
     visit "/"
     # and I click a link to "My Account"

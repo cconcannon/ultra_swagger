@@ -14,6 +14,7 @@ class Seed
     chris_outerwear
     chris_hydration_packs
     chris_base_layers
+    # chris_reviews
   end
   
   private
@@ -24,7 +25,7 @@ class Seed
   def chris_races
     races.values.each do |race|
       Race.create(race)
-      puts "#{race.name} in #{race.location} added to race list!"
+      puts "#{race["name"]} in #{race["location"]} added to race list!"
     end
   end
   
@@ -56,6 +57,13 @@ class Seed
     end
   end
   
+  def chris_reviews
+    reviews.values.each do |review|
+      Review.create(review)
+      puts "Chris's review # #{review.id} created!"
+    end
+  end
+  
   def shoes
     YAML.load(File.read("db/seeds/shoes.yml"))
   end
@@ -70,6 +78,14 @@ class Seed
   
   def base_layers
     YAML.load(File.read("db/seeds/base_layers.yml"))
+  end
+  
+  def races
+    YAML.load(File.read("db/seeds/races.yml"))
+  end
+  
+  def reviews
+    YAML.load(File.read("db/seeds/reviews.yml"))
   end
 end
 
