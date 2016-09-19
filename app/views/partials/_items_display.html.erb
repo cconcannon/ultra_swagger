@@ -1,5 +1,5 @@
 <div class="row large-up-3 medium-up-2">
-  <% @items.each do |item| %>
+  <% items.each do |item| %>
     <div class='column index-item-container', data-brand="<%= item.brand %>">
       <div class='column text-center index-item'>
         <%= link_to "#{item.brand} #{item.model}", "/items/#{item.class.name.downcase.concat('s')}/#{item.id}", class: "button callout" %>

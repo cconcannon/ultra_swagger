@@ -8,6 +8,6 @@
   <hr>
 </div>
 
-<%= render partial: "partials/brand_checkbox_filter" %>
+<%= render partial: "partials/brand_checkbox_filter", locals: { brands: @brands } %>
 
-<%= render partial: "partials/items_display" %>
+<%= render partial: "partials/items_display", locals: { items: @items } %>

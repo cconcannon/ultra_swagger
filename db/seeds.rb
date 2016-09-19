@@ -90,7 +90,7 @@ class Seed
   def races
     YAML.load(File.read("db/seeds/races.yml"))
   end
-  
+
   def reviews
     [ 
       { race: Race.find_by(name: "Angeles Crest 100"),
