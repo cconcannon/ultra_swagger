@@ -9,6 +9,7 @@
 class Seed
   def initialize
     chris_admin_user
+    chris_races
     chris_shoes
     chris_outerwear
     chris_hydration_packs
@@ -18,6 +19,13 @@ class Seed
   private
   
   def chris_admin_user
+  end
+  
+  def chris_races
+    races.values.each do |race|
+      Race.create(race)
+      puts "#{race.name} in #{race.location} added to race list!"
+    end
   end
   
   def chris_shoes
