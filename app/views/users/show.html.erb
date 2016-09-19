@@ -1,17 +1,30 @@
 <h3 class="text-center"><%= @user.firstname %>'s Recent Strava Totals:</h3>
 <div class="text-center">
-  <h5>Average Weekly Distance: <%= @strava_data.avg_weekly_distance %> miles</h5>
-  <h5>Average Weekly Running Time: <%= @strava_data.avg_weekly_time %> hours</h5>
-  <h5>Average Weekly Elevation Gain: <%= @strava_data.avg_weekly_elevation_gain %> feet</h5>
-  <h5>Average Speed: <%= @strava_data.avg_speed %> mph</h5>
+  <% unless @strava_data.nil? %>
+    <h5>Average Weekly Distance: <%= @strava_data.avg_weekly_distance %> miles</h5>
+    <h5>Average Weekly Running Time: <%= @strava_data.avg_weekly_time %> hours</h5>
+    <h5>Average Weekly Elevation Gain: <%= @strava_data.avg_weekly_elevation_gain %> feet</h5>
+    <h5>Average Speed: <%= @strava_data.avg_speed %> mph</h5>
+  <% end %>
 </div>  
 <hr>
 <h3 class="text-center"><%= @user.firstname %>'s Reviews</h3>
-<div class='text-center user-<%= @user.id %>-approved-reviews'>
+<div class='text-center'id='user-<%= @user.id %>-approved-reviews'>
   <h4>Approved Reviews</h4>
+  <%= render partial: "partials/user_reviews_table", locals: { reviews: @approved_reviews } %>
   <hr>
 </div>
-<div class='text-center user-<%= @user.id %>-pending-reviews'>
+<div class='text-center' id='user-<%= @user.id %>-pending-reviews'>
   <h4>Pending Reviews</h4>
+  <%= render partial: "partials/user_reviews_table", locals: { reviews: @pending_reviews } %>
   <hr>
+</div>
+
+<div class='text-center' id='user-<%= @user.id %>-rejected-reviews'>
+  <h4>Rejected Reviews</h4>
+  <%= render partial: "partials/user_reviews_table", locals: { reviews: @rejected_reviews } %>
+  <hr>
+</div>
+<div class="row text-center">
+  <a href="/reviews/new" class="callout button">Submit A Product Review</a>
 </div>

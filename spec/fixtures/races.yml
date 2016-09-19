@@ -1,0 +1,32 @@
+ac100:
+  id: 1
+  name: Angeles Crest 100
+  date: 2016-08-06
+  location: Los Angeles, CA
+  distance: 100 miles
+  temp_high: 95
+  temp_low: 68
+  trail_attr: technical
+  climate: dry
+  
+leadville_50:
+  id: 2
+  name: Leadville Silver Rush 50
+  date: 2016-07-10
+  location: Leadville, CO
+  distance: 50 miles
+  temp_high: 79
+  temp_low: 48
+  trail_attr: smooth
+  climate: dry
+  
+silverton:
+  id: 3
+  name: Silverton Double Dirty 30
+  date: 2016-09-24
+  location: Silverton, CO
+  distance: 100 km
+  temp_high: 59
+  temp_low: 33
+  trail_attr: technical
+  climate: dry

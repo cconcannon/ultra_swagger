@@ -1,4 +1,11 @@
-# As a visiting user
+require 'rails_helper'
+
+describe "user is on the home page" do
+  scenario "logged in with Strava" do
+    # As a logged in user
+    page.set_rack_session(user_id: 1)
+  end
+end
 # when I visit the root path
 # and I click on "Register"
 # and I login in with Strava OAuth

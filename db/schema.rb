@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160918210054) do
+ActiveRecord::Schema.define(version: 20160919203526) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -33,8 +33,8 @@ ActiveRecord::Schema.define(version: 20160918210054) do
     t.string   "sex"
     t.integer  "avg_rating"
     t.string   "image_path"
-    t.string   "type"
     t.integer  "rating"
+    t.string   "type"
   end
 
   create_table "outerwears", force: :cascade do |t|
@@ -52,6 +52,7 @@ ActiveRecord::Schema.define(version: 20160918210054) do
     t.string   "climate"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.date     "date"
   end
 
   create_table "reviews", force: :cascade do |t|
@@ -59,8 +60,12 @@ ActiveRecord::Schema.define(version: 20160918210054) do
     t.integer  "user_id"
     t.integer  "item_id"
     t.text     "comments"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+    t.integer  "rating"
+    t.boolean  "approved"
+    t.boolean  "reviewed"
+    t.string   "admin_comments"
     t.index ["item_id"], name: "index_reviews_on_item_id", using: :btree
     t.index ["race_id"], name: "index_reviews_on_race_id", using: :btree
     t.index ["user_id"], name: "index_reviews_on_user_id", using: :btree
@@ -85,13 +90,12 @@ ActiveRecord::Schema.define(version: 20160918210054) do
   create_table "users", force: :cascade do |t|
     t.integer  "strava_id"
     t.string   "email"
-    t.datetime "created_at",           null: false
-    t.datetime "updated_at",           null: false
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
     t.string   "token"
     t.string   "firstname"
     t.string   "lastname"
-    t.integer  "strava_user_total_id"
-    t.index ["strava_user_total_id"], name: "index_users_on_strava_user_total_id", using: :btree
+    t.boolean  "admin",      default: false
   end
 
   add_foreign_key "reviews", "items"

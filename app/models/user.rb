@@ -1,5 +1,6 @@
 class User < ApplicationRecord 
   has_many :strava_user_totals
+  has_many :reviews
    
   validates :strava_id, uniqueness: true
   validates :email, uniqueness: true
