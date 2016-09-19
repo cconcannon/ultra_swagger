@@ -4,12 +4,28 @@
 </div>
 
 <% if current_user %>
-  <div class="row large-up-2">
-    <div class="column text-center callout">
-      <h3>New Product Review Form Goes Here</h3>
-    </div>
-    <div class="column text-center callout">
-      <h3>Race Details Form Goes Here</h3>
+  <div class="row text-center">
+    <div class="large-4 large-centered columns">
+      <%= form_for @review do |f| %>
+        <h5>Product Details</h5>
+        <%= fields_for @review.item do |i| %>
+          <%= i.text_field(:type, placeholder: "Item Type") %>
+          <%= i.text_field(:brand, placeholder: "Brand Name") %>
+          <%= i.text_field(:model, placeholder: "Model Name") %>
+          <%= i.text_field(:sex, placeholder: "M/F") %>
+        <% end %>
+        <%= f.text_field(:rating, placeholder: "Rating (0-10)") %>
+        <%= f.text_field(:comments, placeholder: "Comments") %>
+        <hr>
+        <h5>Race Details</h5>
+        <%= fields_for @review.race do |r| %>
+          <%= r.text_field(:name, placeholder: "Race Name") %>
+          <%= r.text_field(:distance, placeholder: "Race Distance (e.g. '100 miles')") %>
+          <%= r.text_field(:location, placeholder: "Race Location (e.g. 'Leadville, CO')") %>
+          <%= r.text_field(:date, placeholder: "Race Date (e.g. '2016-07-10')") %>
+        <% end %>
+        <%= link_to "Submit Review", f.submit, class: "callout button expanded" %>
+      <% end %>
     </div>
   </div>
   

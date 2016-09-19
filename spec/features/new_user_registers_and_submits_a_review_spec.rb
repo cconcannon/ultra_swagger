@@ -6,7 +6,7 @@ describe "user is on the home page" do
     # when I am on the home page
     visit "/"
     # and I click the button to submit a review
-    click_button "Submit A Review"
+    click_on "Submit A Product Review"
     # I am redirected to the new review page
     expect(current_path).to eq("/reviews/new")
     # but I see a message that I need to log in
@@ -18,23 +18,24 @@ describe "user is on the home page" do
   scenario "logged in with Strava" do
     # As a logged in user
     page.set_rack_session(user_id: 1)
+    # When I visit the site
+    visit "/"
     # when I click on "Submit new product review"
-    click_button "Submit A Product Review"
+    click_on "Submit A Product Review"
     # I am redirected to "reviews/new"
     expect(current_path).to eq("/reviews/new")
     # and I fill in the new review form
-    fill_in "Brand", with: "Patagonia"
-    fill_in "Model", with: "Houdini"
-    fill_in "Rating", with: 10
-    fill_in "Comments", with: "Pricey, but worth every penny! Has saved my butt plenty of times at altitude"
-    within(".race-details") do
-      fill_in "Name", with: "Western States 100"
-      fill_in "Distance", with: "100 miles"
-      fill_in "Location", with: "Squaw Valley, CA"
-      fill_in "Date", with: "2014-06-25"
-    end
+    fill_in "item[type]", with: "Outerwear"
+    fill_in "item[brand]", with: "Patagonia"
+    fill_in "item[model]", with: "Houdini"
+    fill_in "review[rating]", with: 10
+    fill_in "review[comments]", with: "Pricey, but worth every penny! Has saved my butt plenty of times at altitude"
+    fill_in "race[name]", with: "Western States 100"
+    fill_in "race[distance]", with: "100 miles"
+    fill_in "race[location]", with: "Squaw Valley, CA"
+    fill_in "race[date]", with: "2014-06-25"
     # and I click "Submit Review"
-    click_button "Submit Review"
+    click_on "Submit Review"
     # I am redirected to "users/:id
     expect(current_path).to eq(user_path(1))
     within("#user-1-pending-reviews") do
