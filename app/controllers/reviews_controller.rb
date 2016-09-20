@@ -3,18 +3,20 @@ class ReviewsController < ApplicationController
     @review = Review.new
     @review.item = Item.new
     @review.race = Race.new
+    @user = current_user
   end
   
   def create
+    user = User.find(params[:review][:user_id])
     race = Race.find_or_create_by(race_params)
     item = Item.find_or_create_by(item_params)
     review = Review.new(review_params)
+    review.user = user
     review.race = race
     review.item = item
-    review.user = current_user
-    review.strava_user_total = current_user.most_recent_strava_data
+    review.strava_user_total = user.most_recent_strava_data
     review.save!
-    redirect_to user_path(current_user)
+    redirect_to user_path(user)
   end
   
   

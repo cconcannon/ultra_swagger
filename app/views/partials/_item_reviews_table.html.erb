@@ -7,14 +7,12 @@
     <th>Comments</th>
   </tr>
   <% reviews.each do |review| %>
-    <div class='user-review'>
-      <tr>
-        <td><%= link_to user.strava_id, "https://www.strava.com/athletes/#{user.strava_id}" %>
-        <td><%= review.created_at.to_date %></td>
-        <td><%= review.rating %></td>
-        <td><%= review.race.name %></td>
-        <td><%= review.comments %></td>
-      </tr>
-    </div>
+    <tr class="user-review">
+      <td><%= link_to review.user.strava_id, "https://www.strava.com/athletes/#{review.user.strava_id}" %>
+      <td><%= review.created_at.to_date %></td>
+      <td><%= review.rating %></td>
+      <td><%= review.race.name %></td>
+      <td><%= review.comments %></td>
+    </tr>
   <% end %>
 </table>

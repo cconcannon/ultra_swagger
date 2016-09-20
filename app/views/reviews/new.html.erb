@@ -13,6 +13,7 @@
           <%= i.text_field(:brand, placeholder: "Brand Name") %>
           <%= i.text_field(:model, placeholder: "Model Name") %>
           <%= i.text_field(:sex, placeholder: "M/F") %>
+          <%= i.text_field(:image_path) %>
         <% end %>
         <%= f.text_field(:rating, placeholder: "Rating (0-10)") %>
         <%= f.text_field(:comments, placeholder: "Comments") %>
@@ -24,6 +25,7 @@
           <%= r.text_field(:location, placeholder: "Race Location (e.g. 'Leadville, CO')") %>
           <%= r.text_field(:date, placeholder: "Race Date (e.g. '2016-07-10')") %>
         <% end %>
+        <%= f.hidden_field(:user_id, value: @user.id) %>
         <%= f.submit "Submit Review", class: "callout button expanded" %>
       <% end %>
     </div>

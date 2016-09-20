@@ -14,7 +14,7 @@ RSpec.describe "logged in user is on the home page" do
     expect(page).to have_content("Welcome, Christopher")
     # and I can see all my approved reviews listed by date descending
     within("#user-1-approved-reviews") do
-      expect(page).to have_selector(".user-review", count: 3)
+      expect(page).to have_selector(".user-review", count: 4)
     end
     # and I can see all my pending reviews listed by date descending
     within("#user-1-pending-reviews") do

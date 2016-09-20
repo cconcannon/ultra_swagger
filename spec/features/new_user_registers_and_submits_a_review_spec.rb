@@ -1,7 +1,11 @@
 require 'rails_helper'
 
 describe "user is on the home page" do
+  fixtures :items
+  fixtures :races
+  fixtures :users
   fixtures :strava_user_totals
+  fixtures :reviews
   # As a visitor
   scenario "not logged in" do
     # when I am on the home page
