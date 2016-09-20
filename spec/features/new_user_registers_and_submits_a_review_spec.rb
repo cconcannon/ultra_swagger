@@ -28,6 +28,7 @@ describe "user is on the home page" do
     fill_in "item[type]", with: "Outerwear"
     fill_in "item[brand]", with: "Patagonia"
     fill_in "item[model]", with: "Houdini"
+    fill_in "item[sex]", with: "M"
     fill_in "review[rating]", with: 10
     fill_in "review[comments]", with: "Pricey, but worth every penny! Has saved my butt plenty of times at altitude"
     fill_in "race[name]", with: "Western States 100"

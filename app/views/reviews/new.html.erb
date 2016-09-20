@@ -24,7 +24,7 @@
           <%= r.text_field(:location, placeholder: "Race Location (e.g. 'Leadville, CO')") %>
           <%= r.text_field(:date, placeholder: "Race Date (e.g. '2016-07-10')") %>
         <% end %>
-        <%= link_to "Submit Review", f.submit, class: "callout button expanded" %>
+        <%= f.submit "Submit Review", class: "callout button expanded" %>
       <% end %>
     </div>
   </div>
