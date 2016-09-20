@@ -1,0 +1,13 @@
+chris:
+  user_id: 1
+  avg_weekly_distance: 49
+  avg_weekly_time: 7.0
+  avg_weekly_elevation_gain: 4853
+  avg_speed: 7.0
+  
+david:
+  user_id: 3
+  avg_weekly_distance: 25
+  avg_weekly_time: 5.0
+  avg_weekly_elevation_gain: 500
+  avg_speed: 5.0

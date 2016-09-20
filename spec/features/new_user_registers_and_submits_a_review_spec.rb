@@ -1,6 +1,7 @@
 require 'rails_helper'
 
 describe "user is on the home page" do
+  fixtures :strava_user_totals
   # As a visitor
   scenario "not logged in" do
     # when I am on the home page
@@ -26,8 +27,8 @@ describe "user is on the home page" do
     expect(current_path).to eq("/reviews/new")
     # and I fill in the new review form
     fill_in "item[type]", with: "Outerwear"
-    fill_in "item[brand]", with: "Patagonia"
-    fill_in "item[model]", with: "Houdini"
+    fill_in "item[brand]", with: "My Brand"
+    fill_in "item[model]", with: "New Jacket"
     fill_in "item[sex]", with: "M"
     fill_in "review[rating]", with: 10
     fill_in "review[comments]", with: "Pricey, but worth every penny! Has saved my butt plenty of times at altitude"
@@ -40,10 +41,14 @@ describe "user is on the home page" do
     # I am redirected to "users/:id
     expect(current_path).to eq(user_path(1))
     within("#user-1-pending-reviews") do
-      expect(page).to have_content("Patagonia Houdini")
+      expect(page).to have_content("My Brand New Jacket")
       expect(page).to have_content("Western States 100")
       expect(page).to have_content("Pricey, but worth every penny!")
     end
+    # and when I visit that type index page
+    visit "/items/outerwear"
+    # the item is visible
+    expect(page).to have_content("My Brand New Jacket")
   end
 end
 # and I fill in the form with required information

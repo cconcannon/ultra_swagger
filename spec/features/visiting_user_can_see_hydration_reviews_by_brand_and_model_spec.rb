@@ -1,3 +1,12 @@
+require "rails_helper"
+
+describe "visitor can see hydration pack reviews" do
+  fixtures :users
+  fixtures :strava_user_totals
+  fixtures :hydration_packs
+  fixtures :races
+  fixtures :hydration_pack_reviews
+  
 # As a visiting user
 # when I visit "root/reviews/hydration"
 # I can see hydration pack models

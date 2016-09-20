@@ -3,6 +3,7 @@ salomon_short_tights:
   model: Short Tight
   sex: M
   avg_rating: 10
+  type: BaseLayer
   image_path: http://www.fc-moto.de/WebRoot/FCMotoDB/Shops/10207048/5422/8AAB/F47F/F970/EC93/4DEB/AE59/771C/359573_1.jpg
 
 asics_singlet:
@@ -10,6 +11,7 @@ asics_singlet:
   model: Western States Singlet
   sex: M
   avg_rating: 10
+  type: BaseLayer
   image_path: https://dqzrr9k4bjpzk.cloudfront.net/images/123100/290168587.jpg
 
 tracksmith_shorts:
@@ -17,6 +19,7 @@ tracksmith_shorts:
   model: Van Cortlandt Short
   sex: M
   avg_rating: 9
+  type: BaseLayer
   image_path: https://tracksmith-images.s3.amazonaws.com/spree/products/325/product/w_black_short.png?1452003575
 
 tracksmith_singlet:
@@ -24,4 +27,5 @@ tracksmith_singlet:
   model: BQ Van Cortlandt Singlet
   sex: M
   avg_rating: 9
+  type: BaseLayer
   image_path: http://2w6uh4g7gq2bgvs13eeaea11.wpengine.netdna-cdn.com/wp-content/uploads/2014/10/detail_1.jpg

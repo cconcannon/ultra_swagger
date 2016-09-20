@@ -9,7 +9,7 @@
   <% reviews.each do |review| %>
     <div class='user-review'>
       <tr>
-        <td><%= link_to @user.strava_id, "https://www.strava.com/athletes/#{@user.strava_id}" %>
+        <td><%= link_to user.strava_id, "https://www.strava.com/athletes/#{user.strava_id}" %>
         <td><%= review.created_at.to_date %></td>
         <td><%= review.rating %></td>
         <td><%= review.race.name %></td>

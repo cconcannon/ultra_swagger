@@ -12,6 +12,7 @@ class ReviewsController < ApplicationController
     review.race = race
     review.item = item
     review.user = current_user
+    review.strava_user_total = current_user.most_recent_strava_data
     review.save!
     redirect_to user_path(current_user)
   end

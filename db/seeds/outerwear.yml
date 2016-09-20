@@ -3,6 +3,7 @@ precip:
   model: PreCip
   sex: M
   avg_rating: 9
+  type: Outerwear
   image_path: http://lfadventureclub.com/wp-content/uploads/2012/03/PreCip.jpg
 
 houdini:
@@ -10,6 +11,7 @@ houdini:
   model: Houdini
   sex: M
   avg_rating: 10
+  type: Outerwear
   image_path: http://cdn.outdoorgearlab.com/photos/8/47/206195_2097_L.jpg
     
 leadville:
@@ -17,4 +19,5 @@ leadville:
   model: Leadville
   sex: M
   avg_rating: 9
+  type: Outerwear
   image_path: http://images.altrec.com/marmot-leadville-jkt-cobaltblu-13-2-zoom.jpg

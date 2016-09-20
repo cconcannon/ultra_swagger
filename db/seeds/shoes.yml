@@ -3,6 +3,7 @@ vazee_summit:
   model: Vazee Summit
   sex: M
   avg_rating: 10 
+  type: Shoe
   image_path: http://s7d5.scene7.com/is/image/NB/mtsumbg_nb_14_i?$dw_temp_default_gallery$
   
 speedcross_3:
@@ -10,6 +11,7 @@ speedcross_3:
   model: Speedcross 3
   sex: M
   avg_rating: 8
+  type: Shoe
   image_path: http://gearx.com/blog/wp-content/uploads/2012/05/salomon-speedcross-3-trail-racin-17641-f.jpeg
 
 trail_glove:
@@ -17,6 +19,7 @@ trail_glove:
   model: Trail Glove
   sex: M
   avg_rating: 6
+  type: Shoe
   image_path: http://fittechnica.co.uk/fittechnica/wp-content/uploads/2013/06/Merrell-Trail-Glove-Yellow-2.jpg
   
 boco_sol:
@@ -24,6 +27,7 @@ boco_sol:
   model: Boco Sol
   sex: M
   avg_rating: 9
+  type: Shoe
   image_path: http://www.believeintherun.com/wp-content/uploads/2014/09/hero.png
   
 leadville_v3:
@@ -31,4 +35,5 @@ leadville_v3:
   model: Leadville v3
   sex: M
   avg_rating: 8
+  type: Shoe
   image_path: http://roadrunnersports.scene7.com/is/image/roadrunnersports/05306-407-ALT?iv=L4eTB3&wid=438&hei=350
