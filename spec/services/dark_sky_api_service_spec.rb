@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-describe DarkSkyApiService, :vcr => true do
+describe DarkSkyApiService, vcr: true do
   scenario "it returns historical weather data" do
     VCR.use_cassette("dark_sky_historical_data") do
       race = Race.new(
