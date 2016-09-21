@@ -13,8 +13,8 @@
   <div class="row text-center">
     <div class="large-4 large-centered columns">
       <h5>PRODUCT</h5>
-      <%= select_tag(:item_id, options_for_select(@item_options), { include_blank: "Select Product (or enter new product below)" }) %>
       <%= form_for @review do |f| %>
+      <%= f.select(:item_id, options_for_select(@item_options), { include_blank: "Select Product (or enter new product below)" }) %>
       <%= f.text_field(:rating, placeholder: "Rating (0-10)") %>
       <%= f.text_area(:comments, placeholder: "Comments") %>
         <h5>New Product Details</h5>
@@ -27,7 +27,7 @@
         <% end %>
         <hr>
         <h5>RACE</h5>
-        <%= select_tag(:race_id, options_for_select(@race_options), { include_blank: "Select Race (or enter new race below)" }) %>
+        <%= f.select(:race_id, options_for_select(@race_options), { include_blank: "Select Race (or enter new race below)" }) %>
         <h5>New Race Details</h5>
         <%= fields_for @review.race do |r| %>
           <%= r.text_field(:name, placeholder: "Race Name") %>
