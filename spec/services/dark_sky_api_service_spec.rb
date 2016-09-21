@@ -10,8 +10,8 @@ describe DarkSkyApiService, vcr: true do
         lon: -106.2925
       )
       
-      client = DarkSkyApiService.new(race)
-      response = client.historical_weather
+      client = DarkSkyApiService.new
+      response = client.historical_weather(race.lat, race.lon, race.date)
       expect(response).to be_an_instance_of(Hash)
       expect(response[:daily][:data][0][:temperatureMax]).to eq(61.7)
       expect(response[:daily][:data][0][:summary]).to eq("Light rain overnight.")

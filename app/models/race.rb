@@ -7,11 +7,9 @@ class Race < ApplicationRecord
   validates :location, presence: true
   validates :date, presence: true
   
-  private
-  
   def fetch_coordinates
     geo_service = GoogleGeocodeApiService.new(self.location)
-    raw_data = service_call.get_coordinates
+    raw_data = geo_service.get_coordinates
     self.lat = raw_data[:results][0][:geometry][:location][:lat]
     self.lon = raw_data[:results][0][:geometry][:location][:lng]
   end
@@ -19,8 +17,8 @@ class Race < ApplicationRecord
   def fetch_weather
     weather_service = DarkSkyApiService.new(self)
     raw_data = weather_service.historical_weather
-    self.temp_high = raw_data[:daily][:data][0][:temperatureMax]
-    self.temp_low = raw_data[:daily][:data][0][:temperatureMin]
+    self.temp_high = raw_data[:daily][:data][0][:temperatureMax].to_f
+    self.temp_low = raw_data[:daily][:data][0][:temperatureMin].to_f
     self.climate = raw_data[:daily][:data][0][:summary]
   end
 end

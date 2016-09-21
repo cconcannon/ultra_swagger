@@ -32,7 +32,16 @@ class ReviewsController < ApplicationController
     if params[:review][:race_id].to_i > 0
       Race.find(params[:review][:race_id])
     else
-      Race.find_or_create_by(race_params)
+      race = Race.new(race_params)
+      coordinates = fetch_coordinates(race)
+      race.lat = coordinates[0]
+      race.lon = coordinates[1]
+      weather = fetch_weather(race)
+      race.temp_high = weather[0]
+      race.temp_low = weather[1]
+      race.climate = weather[2]
+      race.save
+      race
     end
   end
   
@@ -54,5 +63,18 @@ class ReviewsController < ApplicationController
   
   def review_params
     params.require(:review).permit(:item_id, :race_id, :user_id, :rating, :comments)
+  end
+  
+  def fetch_coordinates(race)
+    geo_service = GoogleGeocodeApiService.new(race.location)
+    raw_data = geo_service.get_coordinates
+    [raw_data[:results][0][:geometry][:location][:lat], raw_data[:results][0][:geometry][:location][:lng]]
+  end
+  
+  def fetch_weather(race)
+    weather_service = DarkSkyApiService.new
+    raw_data = weather_service.historical_weather(race.lat, race.lon, race.date)
+    [raw_data[:daily][:data][0][:temperatureMax].to_f, raw_data[:daily][:data][0][:temperatureMin].to_f,
+    raw_data[:daily][:data][0][:summary]]
   end
 end
