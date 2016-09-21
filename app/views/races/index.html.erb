@@ -1,0 +1,28 @@
+<div class="fullwidth">
+  <img class="media" src="/assets/races_banner.jpg" alt="A Cattle Dog with a sign saying 'Good luck Dad! Run Fast! Love you Lots!'">
+</div>
+
+<div class="row text-center page-title">
+  <hr>
+  <h1>Races with Product Reviews</h1>
+  <hr>
+</div>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Location</th>
+    <th>Distance</th>
+    <th>Max Temp</th>
+    <th>Min Temp</th>
+  </tr>
+  <% @races.each do |race| %>
+    <tr class="text-center race">
+      <td><%= link_to "#{race.date.year} #{race.name}", race_path(race) %></td>
+      <td><%= race.location %></td>
+      <td><%= race.distance %></td>
+      <td><%= race.temp_high %></td>
+      <td><%= race.temp_low %></td>
+    </tr>
+  <% end %>
+</table>
