@@ -21,7 +21,6 @@ class ReviewsController < ApplicationController
       item: check_for_item_input,
       strava_user_total: @user.most_recent_strava_data
     })
-    binding.pry
     redirect_to user_path(@user)
   end
   
@@ -30,7 +29,7 @@ class ReviewsController < ApplicationController
   private
   
   def check_for_race_input
-    if params[:review][:race_id]
+    if params[:review][:race_id].to_i > 0
       Race.find(params[:review][:race_id])
     else
       Race.find_or_create_by(race_params)
@@ -38,7 +37,7 @@ class ReviewsController < ApplicationController
   end
   
   def check_for_item_input
-    if params[:review][:item_id]
+    if params[:review][:item_id].to_i > 0
       Item.find(params[:review][:item_id])
     else
       Item.find_or_create_by(item_params)
