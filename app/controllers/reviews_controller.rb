@@ -1,5 +1,7 @@
 class ReviewsController < ApplicationController
   def new
+    @races = Race.all.by_name_date
+    @items = Item.all.by_brand
     @review = Review.new
     @review.item = Item.new
     @review.race = Race.new
