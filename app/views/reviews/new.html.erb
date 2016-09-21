@@ -13,7 +13,7 @@
           <%= i.text_field(:brand, placeholder: "Brand Name") %>
           <%= i.text_field(:model, placeholder: "Model Name") %>
           <%= i.text_field(:sex, placeholder: "M/F") %>
-          <%= i.text_field(:image_path) %>
+          <%= i.text_field(:image_path, { value: nil, placeholder: "Item Image URL" }) %>
         <% end %>
         <%= f.text_field(:rating, placeholder: "Rating (0-10)") %>
         <%= f.text_field(:comments, placeholder: "Comments") %>

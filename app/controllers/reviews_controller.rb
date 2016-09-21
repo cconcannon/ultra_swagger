@@ -28,7 +28,7 @@ class ReviewsController < ApplicationController
   end
   
   def item_params
-    params.require(:item).permit(:type, :brand, :model, :sex)
+    params.require(:item).permit(:type, :brand, :model, :sex, :image_path)
   end
   
   def review_params
