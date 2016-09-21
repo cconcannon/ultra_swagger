@@ -48,3 +48,23 @@ review_5:
   approved: false
   reviewed: true
   admin_comments: Duplicate Review
+
+review_6:
+  id: 6
+  race_id: 3
+  user_id: 1
+  item_id: 1
+  rating: 9
+  comments: This is the best vest ever! Plenty of room for several-hour adventures
+  approved: true
+  reviewed: true
+
+review_7:
+  id: 7
+  race_id: 3
+  user_id: 2
+  item_id: 1
+  rating: 10
+  comments: Very comfortable and holds a ton!
+  approved: true
+  reviewed: true
