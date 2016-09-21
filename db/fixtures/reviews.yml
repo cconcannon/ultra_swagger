@@ -58,13 +58,3 @@ review_6:
   comments: This is the best vest ever! Plenty of room for several-hour adventures
   approved: true
   reviewed: true
-
-review_7:
-  id: 7
-  race_id: 3
-  user_id: 2
-  item_id: 1
-  rating: 10
-  comments: Very comfortable and holds a ton!
-  approved: true
-  reviewed: true

@@ -19,6 +19,7 @@ class Seed
   
   def chris_admin_user
     User.create(
+      id: 1,
       strava_id: 5189780,
       email: "christopher.concannon@gmail.com",
       firstname: "Christopher",
@@ -45,16 +46,16 @@ class Seed
   end
   
   def chris_items
-    items.each do |item|
+    items.values.each do |item|
       i = Item.create(item)
-      puts "#{item.brand} #{item.model} created!"
+      puts "#{item["brand"]} #{item["model"]} created!"
     end
   end
   
   def chris_reviews
-    reviews.each do |review|
+    reviews.values.each do |review|
       r = Review.create(review)
-      puts "Review ##{r.id} created!"
+      puts "Review ##{r["id"]} created!"
     end
   end
   
