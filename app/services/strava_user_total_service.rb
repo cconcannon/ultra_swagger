@@ -1,4 +1,6 @@
 class StravaUserTotalService
+  
+  include ApplicationHelper
     
   def initialize(strava_user)
     @strava_user = strava_user
@@ -9,10 +11,6 @@ class StravaUserTotalService
   def data
     response = @conn.get "athletes/#{@strava_user.strava_id}/stats"
     all_data = parse(response.body)
-  end
-  
-  def parse(input)
-    JSON.parse(input, symbolize_names: true)
   end
   
   def save_user_run_totals
