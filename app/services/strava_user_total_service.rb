@@ -27,7 +27,10 @@ class StravaUserTotalService
       avg_weekly_time: get_avg_weekly_time(api_data[:moving_time]),
       avg_weekly_elevation_gain: 
         get_avg_weekly_elevation_gain(api_data[:elevation_gain]),
-      avg_speed: get_avg_speed(api_data[:distance], api_data[:moving_time])
+      avg_speed: get_avg_speed(
+        api_data[:distance].format_to_mi, 
+        api_data[:moving_time].format_to_hrs
+      )
     }
   end
 
