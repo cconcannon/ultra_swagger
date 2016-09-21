@@ -11,16 +11,18 @@ class ReviewsController < ApplicationController
   end
   
   def create
-    user = User.find(params[:review][:user_id])
-    race = Race.find_or_create_by(race_params)
-    item = Item.find_or_create_by(item_params)
+    @user = current_user
     review = Review.new(review_params)
-    review.user = user
-    review.race = race
-    review.item = item
-    review.strava_user_total = user.most_recent_strava_data
+    review.user = @user
+    if params[:review][:race_id]
+      review.race = Race.find(params[:review][:race_id])
+    else
+      review.race = Race.find_or_create_by(race_params)
+    end
+    review.item = Item.find_or_create_by(item_params)
+    review.strava_user_total = @user.most_recent_strava_data
     review.save!
-    redirect_to user_path(user)
+    redirect_to user_path(@user)
   end
   
   
@@ -36,6 +38,6 @@ class ReviewsController < ApplicationController
   end
   
   def review_params
-    params.require(:review).permit(:rating, :comments)
+    params.require(:review).permit(:race_id, :rating, :comments)
   end
 end
