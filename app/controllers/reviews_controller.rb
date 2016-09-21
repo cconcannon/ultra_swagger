@@ -3,7 +3,9 @@ class ReviewsController < ApplicationController
     @race_options = Race.all.by_name_date.map do |r|
       [[r.date.year, r.name].join(' '), r.id]
     end
-    @items = Item.all.by_brand
+    @item_options = Item.all.by_brand_model.map do |i|
+      [[i.sex, i.brand, i.model].join(' '), i.id]
+    end
     @review = Review.new
     @review.item = Item.new
     @review.race = Race.new
@@ -14,11 +16,7 @@ class ReviewsController < ApplicationController
     @user = current_user
     review = Review.new(review_params)
     review.user = @user
-    if params[:review][:race_id]
-      review.race = Race.find(params[:review][:race_id])
-    else
-      review.race = Race.find_or_create_by(race_params)
-    end
+    review.race = check_for_race_input
     review.item = Item.find_or_create_by(item_params)
     review.strava_user_total = @user.most_recent_strava_data
     review.save!
@@ -28,6 +26,14 @@ class ReviewsController < ApplicationController
   
   
   private
+  
+  def check_for_race_input
+    if params[:review][:race_id]
+      Race.find(params[:review][:race_id])
+    else
+      Race.find_or_create_by(race_params)
+    end
+  end
   
   def race_params
     params.require(:race).permit(:name, :distance, :location, :date)
