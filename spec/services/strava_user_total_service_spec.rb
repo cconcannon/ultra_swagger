@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-describe StravaUserTotalService, :vcr => true do
+describe StravaUserTotalService, vcr: true do
   fixtures :users
   
   it "returns the user's YTD stats" do
