@@ -9,7 +9,7 @@ ac100:
   trail_attr: technical
   climate: dry
   
-leadville_50:
+leadville_sr50:
   id: 2
   name: Leadville Silver Rush 50
   date: 2016-07-10
@@ -20,7 +20,7 @@ leadville_50:
   trail_attr: smooth
   climate: dry
   
-silverton:
+silverton_dd30:
   id: 3
   name: Silverton Double Dirty 30
   date: 2016-09-24

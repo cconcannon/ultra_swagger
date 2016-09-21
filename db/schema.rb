@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160919203526) do
+ActiveRecord::Schema.define(version: 20160920195810) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -26,14 +26,13 @@ ActiveRecord::Schema.define(version: 20160919203526) do
   end
 
   create_table "items", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",                                         null: false
+    t.datetime "updated_at",                                         null: false
     t.string   "brand"
     t.string   "model"
     t.string   "sex"
     t.integer  "avg_rating"
-    t.string   "image_path"
-    t.integer  "rating"
+    t.string   "image_path", default: "/assets/image_not_found.jpg"
     t.string   "type"
   end
 
@@ -60,14 +59,16 @@ ActiveRecord::Schema.define(version: 20160919203526) do
     t.integer  "user_id"
     t.integer  "item_id"
     t.text     "comments"
-    t.datetime "created_at",     null: false
-    t.datetime "updated_at",     null: false
+    t.datetime "created_at",                           null: false
+    t.datetime "updated_at",                           null: false
     t.integer  "rating"
-    t.boolean  "approved"
-    t.boolean  "reviewed"
+    t.boolean  "approved",             default: false
+    t.boolean  "reviewed",             default: false
     t.string   "admin_comments"
+    t.integer  "strava_user_total_id"
     t.index ["item_id"], name: "index_reviews_on_item_id", using: :btree
     t.index ["race_id"], name: "index_reviews_on_race_id", using: :btree
+    t.index ["strava_user_total_id"], name: "index_reviews_on_strava_user_total_id", using: :btree
     t.index ["user_id"], name: "index_reviews_on_user_id", using: :btree
   end
 

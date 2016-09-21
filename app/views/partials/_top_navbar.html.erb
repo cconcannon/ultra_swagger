@@ -8,8 +8,9 @@
     <ul class="menu">
       <% if current_user %>
         <li>Welcome, <%= current_user.firstname %>!</li>
-        <li><%= link_to "My Reviews", user_path(current_user) %>
-        <li><%= link_to "Logout", "/logout" %>
+        <li><%= link_to "My Reviews", user_path(current_user) %></li>
+        <li><%= link_to "Submit A Review", new_review_path %>
+        <li><%= link_to "Logout", "/logout" %></li>
       <% else %>
         <li><%= link_to "Login with Strava", "/auth/strava" %></li>
       <% end %>

@@ -1,0 +1,143 @@
+ud_ak:
+  id: 1
+  brand: Ultimate Direction
+  model: Anton Krupicka Mountain Vest 3.0
+  sex: M
+  avg_rating: 10
+  type: HydrationPack
+  image_path: https://www.alpfitness.com/wp-content/uploads/2016/07/TORace_Vest_front.jpg
+    
+ud_to2:
+  id: 2
+  brand: Ultimate Direction
+  model: Timothy Olson Race Vest 3.0
+  sex: M
+  avg_rating: 8
+  type: HydrationPack
+  image_path: https://www.alpfitness.com/wp-content/uploads/2016/07/TORace_Vest_front.jpg
+
+ultraspire_alpha:
+  id: 3
+  brand: Ultraspire
+  model: Alpha
+  sex: M
+  avg_rating: 7
+  type: HydrationPack
+  image_path: http://baerendurance.com/wp-content/uploads/2013/10/Ultraspire-Alpha-4.jpg
+  
+mh_fluid:
+  id: 4
+  brand: Mountain Hardwear
+  model: Fluid Race Vest
+  sex: M
+  avg_rating: 8
+  type: HydrationPack
+  image_path: http://s7d5.scene7.com/is/image/ColumbiaSportswear2/OU5945_088_f
+  
+salomon_short_tights:
+  id: 5
+  brand: Salomon
+  model: Short Tight
+  sex: M
+  avg_rating: 10
+  type: BaseLayer
+  image_path: http://www.fc-moto.de/WebRoot/FCMotoDB/Shops/10207048/5422/8AAB/F47F/F970/EC93/4DEB/AE59/771C/359573_1.jpg
+
+asics_singlet:
+  id: 6
+  brand: Asics
+  model: Western States Singlet
+  sex: M
+  avg_rating: 10
+  type: BaseLayer
+  image_path: https://dqzrr9k4bjpzk.cloudfront.net/images/123100/290168587.jpg
+
+tracksmith_shorts:
+  id: 7
+  brand: Tracksmith
+  model: Van Cortlandt Short
+  sex: M
+  avg_rating: 9
+  type: BaseLayer
+  image_path: https://tracksmith-images.s3.amazonaws.com/spree/products/325/product/w_black_short.png?1452003575
+
+tracksmith_singlet:
+  id: 8
+  brand: Tracksmith
+  model: Boston Marathon Van Cortlandt Singlet
+  sex: M
+  avg_rating: 9
+  type: BaseLayer
+  image_path: http://2w6uh4g7gq2bgvs13eeaea11.wpengine.netdna-cdn.com/wp-content/uploads/2014/10/detail_1.jpg
+
+precip:
+  id: 9
+  brand: Marmot
+  model: PreCip
+  sex: M
+  avg_rating: 9
+  type: Outerwear
+  image_path: http://lfadventureclub.com/wp-content/uploads/2012/03/PreCip.jpg
+
+houdini:
+  id: 10
+  brand: Patagonia
+  model: Houdini
+  sex: M
+  avg_rating: 10
+  type: Outerwear
+  image_path: http://cdn.outdoorgearlab.com/photos/8/47/206195_2097_L.jpg
+    
+leadville:
+  id: 11
+  brand: Marmot
+  model: Leadville
+  sex: M
+  avg_rating: 9
+  type: Outerwear
+  image_path: http://images.altrec.com/marmot-leadville-jkt-cobaltblu-13-2-zoom.jpg
+
+vazee_summit:
+  id: 12
+  brand: New Balance
+  model: Vazee Summit
+  sex: M
+  avg_rating: 10 
+  type: Shoe
+  image_path: http://s7d5.scene7.com/is/image/NB/mtsumbg_nb_14_i?$dw_temp_default_gallery$
+  
+speedcross_3:
+  id: 13
+  brand: Salomon
+  model: Speedcross 3
+  sex: M
+  avg_rating: 8
+  type: Shoe
+  image_path: http://gearx.com/blog/wp-content/uploads/2012/05/salomon-speedcross-3-trail-racin-17641-f.jpeg
+
+trail_glove:
+  id: 14
+  brand: Merrell
+  model: Trail Glove
+  sex: M
+  avg_rating: 6
+  type: Shoe
+  image_path: http://fittechnica.co.uk/fittechnica/wp-content/uploads/2013/06/Merrell-Trail-Glove-Yellow-2.jpg
+  
+boco_sol:
+  id: 15
+  brand: Newton
+  model: Boco Sol
+  sex: M
+  avg_rating: 9
+  type: Shoe
+  image_path: http://www.believeintherun.com/wp-content/uploads/2014/09/hero.png
+  
+leadville_v3:
+  id: 16
+  brand: New Balance
+  model: Leadville v3
+  sex: M
+  avg_rating: 8
+  type: Shoe
+  image_path: http://roadrunnersports.scene7.com/is/image/roadrunnersports/05306-407-ALT?iv=L4eTB3&wid=438&hei=350

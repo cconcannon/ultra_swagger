@@ -9,11 +9,9 @@
 class Seed
   def initialize
     chris_admin_user
+    chris_strava_user_total
     chris_races
-    chris_shoes
-    chris_outerwear
-    chris_hydration_packs
-    chris_base_layers
+    chris_items
     chris_reviews
   end
   
@@ -29,6 +27,16 @@ class Seed
     )
   end
   
+  def chris_strava_user_total
+    StravaUserTotal.create(
+      user: User.find_by(strava_id: 5189780),
+      avg_weekly_distance: 49,
+      avg_weekly_time: 7.0,
+      avg_weekly_elevation_gain: 4458,
+      avg_speed: 7.0
+    )
+  end
+  
   def chris_races
     races.values.each do |race|
       Race.create(race)
@@ -36,31 +44,10 @@ class Seed
     end
   end
   
-  def chris_shoes
-    shoes.values.each do |shoe|
-      Shoe.create(shoe)
-      puts "#{shoe["brand"]} #{shoe["model"]} created!"
-    end
-  end
-
-  def chris_outerwear
-    outerwear.values.each do |jacket|
-      Outerwear.create(jacket)
-      puts "#{jacket["brand"]} #{jacket["model"]} created!"
-    end
-  end
-  
-  def chris_hydration_packs
-    hydration_packs.values.each do |hp|
-      HydrationPack.create(hp)
-      puts "#{hp["brand"]} #{hp["model"]} created!"
-    end
-  end
-  
-  def chris_base_layers
-    base_layers.values.each do |bl|
-      BaseLayer.create(bl)
-      puts "#{bl["brand"]} #{bl["model"]} created!"
+  def chris_items
+    items.each do |item|
+      i = Item.create(item)
+      puts "#{item.brand} #{item.model} created!"
     end
   end
   
@@ -71,71 +58,61 @@ class Seed
     end
   end
   
-  def shoes
-    YAML.load(File.read("db/seeds/shoes.yml"))
-  end
-  
-  def hydration_packs
-    YAML.load(File.read("db/seeds/hydration_packs.yml"))
-  end
-  
-  def outerwear
-    YAML.load(File.read("db/seeds/outerwear.yml"))
-  end
-  
-  def base_layers
-    YAML.load(File.read("db/seeds/base_layers.yml"))
+  def items
+    YAML.load(File.read("db/fixtures/items.yml"))
   end
   
   def races
-    YAML.load(File.read("db/seeds/races.yml"))
+    YAML.load(File.read("db/fixtures/races.yml"))
   end
 
   def reviews
-    [ 
-      { race: Race.find_by(name: "Angeles Crest 100"),
-        user: User.find_by(strava_id: 5189780),
-        item: Item.find_by(model: "Vazee Summit"),
-        rating: 10,
-        comments: "Grippy in the wet stuff, yet lightweight and flexible. Supportive enough for 100 miles. My go-to shoe for everything on trail.",
-        approved: true,
-        reviewed: true
-      },
-      { race: Race.find_by(name: "Angeles Crest 100"),
-        user: User.find_by(strava_id: 5189780),
-        item: Item.find_by(model: "Timothy Olson Race Vest 3.0"),
-        rating: 8,
-        comments: "Lightweight and breathable, but still somewhat 'bouncy'... I ended up modifying the pack so that the bottles sit higher. Out of the box, it's not as great a fit as their AK vest. Nice size for warm-weather ultras.",
-        approved: true,
-        reviewed: true
-      },
-      { race: Race.find_by(name: "Leadville Silver Rush 50"),
-        user: User.find_by(strava_id: 5189780),
-        item: Item.find_by(model: "Short Tight"),
-        rating: 10,
-        comments: "These are my go-to for all runs longer than a few hours. They're a little warm for hot weather running, but otherwise perfect. The built-in liner is a great feature.",
-        approved: true,
-        reviewed: true
-      },
-      { race: Race.find_by(name: "Silverton Double Dirty 30"),
-        user: User.find_by(strava_id: 5189780),
-        item: Item.find_by(model: "Houdini"),
-        rating: 10,
-        comments: "Greatest lightweight shell, ever! Not waterproof, but it does the job as an emergency layer (or extremely lightweight wind blocker).",
-        approved: false,
-        reviewed: false
-      },
-      { race: Race.find_by(name: "Leadville Silver Rush 50"),
-        user: User.find_by(strava_id: 5189780),
-        item: Item.find_by(model: "Short Tight"),
-        rating: 10,
-        comments: "blah blah blah didn't finish",
-        approved: false,
-        reviewed: true,
-        admin_comments: "Duplicate Review"
-      } 
-    ]
+    YAML.load(File.read("db/fixtures/reviews.yml"))
   end
+  #   [ 
+  #     { race: Race.find_by(name: "Angeles Crest 100"),
+  #       user: User.find_by(strava_id: 5189780),
+  #       item: Item.find_by(model: "Vazee Summit"),
+  #       rating: 10,
+  #       comments: "Grippy in the wet stuff, yet lightweight and flexible. Supportive enough for 100 miles. My go-to shoe for everything on trail.",
+  #       approved: true,
+  #       reviewed: true
+  #     },
+  #     { race: Race.find_by(name: "Angeles Crest 100"),
+  #       user: User.find_by(strava_id: 5189780),
+  #       item: Item.find_by(model: "Timothy Olson Race Vest 3.0"),
+  #       rating: 8,
+  #       comments: "Lightweight and breathable, but still somewhat 'bouncy'... I ended up modifying the pack so that the bottles sit higher. Out of the box, it's not as great a fit as their AK vest. Nice size for warm-weather ultras.",
+  #       approved: true,
+  #       reviewed: true
+  #     },
+  #     { race: Race.find_by(name: "Leadville Silver Rush 50"),
+  #       user: User.find_by(strava_id: 5189780),
+  #       item: Item.find_by(model: "Short Tight"),
+  #       rating: 10,
+  #       comments: "These are my go-to for all runs longer than a few hours. They're a little warm for hot weather running, but otherwise perfect. The built-in liner is a great feature.",
+  #       approved: true,
+  #       reviewed: true
+  #     },
+  #     { race: Race.find_by(name: "Silverton Double Dirty 30"),
+  #       user: User.find_by(strava_id: 5189780),
+  #       item: Item.find_by(model: "Houdini"),
+  #       rating: 10,
+  #       comments: "Greatest lightweight shell, ever! Not waterproof, but it does the job as an emergency layer (or extremely lightweight wind blocker).",
+  #       approved: false,
+  #       reviewed: false
+  #     },
+  #     { race: Race.find_by(name: "Leadville Silver Rush 50"),
+  #       user: User.find_by(strava_id: 5189780),
+  #       item: Item.find_by(model: "Short Tight"),
+  #       rating: 10,
+  #       comments: "blah blah blah didn't finish",
+  #       approved: false,
+  #       reviewed: true,
+  #       admin_comments: "Duplicate Review"
+  #     } 
+  #   ]
+  # end
 end
 
 Seed.new

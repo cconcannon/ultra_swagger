@@ -24,4 +24,8 @@ class User < ApplicationRecord
     strava_data.update_data
     strava_data
   end
+  
+  def most_recent_strava_data
+    self.strava_user_totals.last
+  end
 end

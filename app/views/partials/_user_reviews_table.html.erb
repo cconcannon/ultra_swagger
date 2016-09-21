@@ -7,15 +7,15 @@
     <th>Comments</th>
     <th>Admin Comments</th>
   </tr>
-  <% reviews.each do |review| %>
+  <% reviews.each do |sub_review| %>
     <div class='user-review'>
       <tr>
-        <td><%= review.created_at.to_date %></td>
-        <td><%= review.item.brand + " " + review.item.model %></td>
-        <td><%= review.rating %></td>
-        <td><%= review.race.name %></td>
-        <td><%= review.comments %></td>
-        <td><%= review.admin_comments %></td>
+        <td><%= sub_review.created_at.to_date %></td>
+        <td><%= sub_review.item.brand + " " + sub_review.item.model %></td>
+        <td><%= sub_review.rating %></td>
+        <td><%= sub_review.race.name %></td>
+        <td><%= sub_review.comments %></td>
+        <td><%= sub_review.admin_comments %></td>
       </tr>
     </div>
   <% end %>
