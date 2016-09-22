@@ -16,11 +16,11 @@ class ReviewsController < ApplicationController
   def create
     @user = current_user
     review = Review.new(review_params)
-    review.update({
+    review.update_attributes({
       user: @user,
       race: check_for_race_input,
       item: check_for_item_input,
-      strava_user_total: @user.most_recent_strava_data
+      strava_user_total: @user.update_strava_user_total
     })
     redirect_to user_path(@user)
   end
