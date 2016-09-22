@@ -5,6 +5,6 @@ class RacesController < ApplicationController
   
   def show
     @race = Race.find(params[:id])
-    @reviews = Review.where(race: @race).all.by_item
+    @reviews = Review.where(race: @race, approved: true).by_item
   end
 end

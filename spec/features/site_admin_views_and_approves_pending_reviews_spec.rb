@@ -1,19 +1,27 @@
-# As a registered and logged in site admin
-# when I visit the root path
-# and I click a link to "Manage Account"
-# I am redirected to "root/admin/users/:id"
-# and I see a list of "Pending Reviews" by date descending
-# and for the first review I click "Approve"
-# and I visit that specific product page
-# I see the review I just approved within the page
-# 
-# and I click a link to "Manage Account"
-# and I am redirected to "root/admin/users/:id"
-# and for the first review I click "Deny"
-# and I visit that specific product page
-# I see the review I just denied within the page
-# 
-# and I click a link to "Manage Account"
-# and I am redirected to "root/admin/users/:id"
-# and I see a section titled "Denied Reviews"
-# I see the review I just denied within that section
+require 'rails_helper'
+
+describe "admin is logged in" do
+  fixtures :races
+  fixtures :users
+  fixtures :strava_user_totals
+  fixtures :items
+  fixtures :reviews
+
+  scenario "they reject a review" do
+    page.set_rack_session(user_id: 1)
+    # as an admin I visit my admin page
+    visit "/admin/reviews"
+    # and I see a list of "Pending Reviews" by date descending
+    expect(page).to have_selector(".pending-review", count: 1)
+    # and I see a list of "Rejected Reviews" by date descending
+    expect(page).to have_selector(".rejected-review", count: 1)
+    # and for the first pending review I click "Deny"
+    first('.pending-review').click_on "Reject"
+    # and I am still in my admin portal
+    expect(current_path).to eq("/admin/reviews")
+    # and I visit that product show page
+    visit "/items/5"
+    # I don't see the review I just denied within the page
+    expect(page).to_not have_content("blah blah blah")
+  end
+end

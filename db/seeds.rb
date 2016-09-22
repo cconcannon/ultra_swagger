@@ -9,10 +9,10 @@
 class Seed
   def initialize
     chris_admin_user
-    chris_strava_user_total
-    chris_races
-    chris_items
-    chris_reviews
+    # chris_strava_user_total
+    # chris_races
+    # chris_items
+    # chris_reviews
   end
   
   private

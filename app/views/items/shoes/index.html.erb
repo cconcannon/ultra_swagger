@@ -8,6 +8,8 @@
   <hr>
 </div>
   
+<% cache cache_key_for(Shoe, "index") do %>
 <%= render partial: "partials/brand_checkbox_filter", locals: { brands: @brands } %>
 
 <%= render partial: "partials/items_display", locals: { items: @items } %>
+<% end %>

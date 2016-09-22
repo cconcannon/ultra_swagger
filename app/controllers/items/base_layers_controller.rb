@@ -3,8 +3,4 @@ class Items::BaseLayersController < ApplicationController
     @brands = base_layer_brands
     @items = BaseLayer.all
   end
-  
-  def show
-    @item = BaseLayer.find(params[:id])
-  end
 end

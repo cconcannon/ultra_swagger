@@ -6,8 +6,8 @@ module StravaDataFormatter
       avg_weekly_elevation_gain: 
         get_avg_weekly_elevation_gain(ytd[:elevation_gain]),
       avg_speed: get_avg_speed(
-        ytd[:distance].format_to_mi, 
-        ytd[:moving_time].format_to_hrs
+        format_to_mi(ytd[:distance]), 
+        format_to_hrs(ytd[:moving_time])
       )
     }
   end

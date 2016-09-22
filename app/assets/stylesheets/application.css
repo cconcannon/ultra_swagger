@@ -120,3 +120,7 @@ h5 {
   border-width: 2px;
   max-width: 15%;
 }
+
+.top-bar-text {
+  color: rgb(250, 250, 250);
+}

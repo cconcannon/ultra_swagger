@@ -1,0 +1,59 @@
+<h3 class="text-center">Admin Page</h3>
+<hr>
+
+<div class='text-center' class='pending-reviews'>
+  <% cache cache_key_for(Review, "pending") do %>
+  <h4>Pending Reviews</h4>
+  <table>
+    <tr>
+      <th>User</th>
+      <th>Review Date</th>
+      <th>Rating</th>
+      <th>Race</th>
+      <th>Comments</th>
+      <th>Approve</th>
+      <th>Reject</th>
+    </tr>
+    <% @pending_reviews.each do |review| %>
+      <tr class="pending-review">
+        <td><%= link_to review.user.strava_id, "https://www.strava.com/athletes/#{review.user.strava_id}" %>
+        <td><%= review.created_at.to_date %></td>
+        <td><%= review.rating %></td>
+        <td><%= review.race.name %></td>
+        <td><%= review.comments %></td>
+        <td><%= link_to "Approve", admin_review_path(review, approved: true), { method: :patch } %>
+        <td><%= link_to "Reject", admin_review_path(review, approved: false), { method: :patch } %>
+      </tr>
+    <% end %>
+  </table>
+  <hr>
+  <% end %>
+</div>
+
+<div class='text-center' class='rejected-reviews'>
+  <% cache cache_key_for(Review, "rejected") do %>
+  <h4>Rejected Reviews</h4>
+  <table>
+    <tr>
+      <th>User</th>
+      <th>Review Date</th>
+      <th>Rating</th>
+      <th>Race</th>
+      <th>Comments</th>
+      <th>Approve</th>
+    </tr>
+    <% @rejected_reviews.each do |review| %>
+      <tr class="rejected-review">
+        <td><%= link_to review.user.strava_id, "https://www.strava.com/athletes/#{review.user.strava_id}" %>
+        <td><%= review.created_at.to_date %></td>
+        <td><%= review.rating %></td>
+        <td><%= review.race.name %></td>
+        <td><%= review.comments %></td>
+        <td><%= link_to "Approve", admin_review_path(review, approved: true), { method: :patch } %>
+      </tr>
+    <% end %>
+  </table>
+  <hr>
+  <% end %>
+</div>
+

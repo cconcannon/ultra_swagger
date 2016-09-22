@@ -4,6 +4,11 @@ Rails.application.routes.draw do
   resources :users, only: [:show]
   resources :reviews, only: [:new, :create]
   resources :races, only: [:index, :show]
+  
+  namespace :admin do
+    resources :reviews, only: [:index, :update]
+  end
+  
   namespace :items do
     resources :hydration_packs, only: [:index]
     resources :outerwear, only: [:index]
