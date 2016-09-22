@@ -7,6 +7,7 @@ review_1:
   comments: Grippy in the wet stuff, yet lightweight and flexible. Supportive enough for 100 miles. My go-to shoe for everything on trail. 
   approved: true
   reviewed: true
+  strava_user_total_id: 1
 
 review_2:
   id: 2
@@ -17,6 +18,8 @@ review_2:
   comments: Lightweight and breathable, but still somewhat 'bouncy'... I ended up modifying the pack so that the bottles sit higher. Out of the box, it's not as great a fit as their AK vest. Nice size for warm-weather ultras.
   approved: true
   reviewed: true
+  strava_user_total_id: 1
+
   
 review_3:
   id: 3
@@ -27,6 +30,8 @@ review_3:
   comments: These are my go-to for all runs longer than a few hours. They're a little warm for hot weather running, but otherwise perfect. The built-in liner is a great feature. 
   approved: true
   reviewed: true
+  strava_user_total_id: 1
+
   
 review_4: 
   id: 4
@@ -37,6 +42,7 @@ review_4:
   comments: Greatest lightweight shell, ever! Not waterproof, but it does the job as an emergency layer (or extremely lightweight wind blocker).
   approved: false
   reviewed: false
+  strava_user_total_id: 1
   
 review_5:
   id: 5
@@ -48,6 +54,7 @@ review_5:
   approved: false
   reviewed: true
   admin_comments: Duplicate Review
+  strava_user_total_id: 1
 
 review_6:
   id: 6
@@ -58,3 +65,4 @@ review_6:
   comments: This is the best vest ever! Plenty of room for several-hour adventures
   approved: true
   reviewed: true
+  strava_user_total_id: 1
