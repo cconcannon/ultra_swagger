@@ -55,7 +55,7 @@ class Seed
   def chris_reviews
     reviews.values.each do |review|
       r = Review.create(review)
-      binding.pry
+      User.find(1).reviews << r
       puts "Review ##{r["id"]} created!"
     end
   end
