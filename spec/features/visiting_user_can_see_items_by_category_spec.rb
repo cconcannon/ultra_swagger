@@ -19,8 +19,7 @@ RSpec.describe "visiting user shopping for gear" do
     click_link "Shoes"
     # I am taken to "root/items/shoes"
     expect(current_path).to eq("/items/shoes")
-    # and I can see shoe models with average rating displayed
-    expect(first(".index-item")).to have_content("Average Rating")
+    # and I can see shoe models
     expect(page).to have_selector(".index-item", count: 5)
     # and I can see a list of shoe brands
     within(".filter-options-container") do
@@ -35,7 +34,7 @@ RSpec.describe "visiting user shopping for gear" do
     # I am taken to "root/reviews/hydration"
     expect(current_path).to eq("/items/hydration_packs")
     # and I can see hydration packs sorted by strava-weighted average ratings
-    expect(first(".index-item")).to have_content("Average Rating")
+    expect(page).to have_selector(".index-item", count: 4)
     # and I can see a list of hydration pack manufacturers
     expect(page).to have_link("Ultimate Direction")
     expect(page).to have_link("Ultraspire")
@@ -48,8 +47,8 @@ RSpec.describe "visiting user shopping for gear" do
     click_link "Outerwear"
     # I am taken to "root/reviews/outerwear"
     expect(current_path).to eq("/items/outerwear")
-    # and I can see outerwear models sorted by strava-weighted average ratings
-    expect(first(".index-item")).to have_content("Average Rating")
+    # and I can see outerwear models
+    expect(page).to have_selector(".index-item", count: 3)
     # and I can see a list of outerwear manufacturers
     expect(page).to have_link("Patagonia")
     expect(page).to have_link("Marmot")
@@ -62,7 +61,7 @@ RSpec.describe "visiting user shopping for gear" do
     # I am taken to "root/reviews/base_layers"
     expect(current_path).to eq("/items/base_layers")
     # and I can see base layer models sorted by strava-weighted average ratings
-    expect(first(".index-item")).to have_content("Average Rating")
+    expect(page).to have_selector(".index-item", count: 4)
     # and I can see a list of base layer manufacturers
     expect(page).to have_link("Tracksmith")
     expect(page).to have_link("Asics")

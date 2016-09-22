@@ -17,7 +17,7 @@ describe "visitor is looking at base layers" do
     # I am redirected to the "Anton Krupicka 3.0 Race Vest" review page
     expect(current_path).to eq("/items/5")
     # and I can see the strava-weighted average ratings of that hydration pack
-    expect(page).to have_content("Average Rating: ")
+    expect(page).to have_content("Salomon Short Tight")
     # and I can see all the reviews listed by date descending
     expect(page).to have_selector(".user-review", count: 1)
   end
