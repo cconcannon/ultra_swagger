@@ -20,8 +20,7 @@ describe "user is on the home page" do
     expect(page).to have_link("Login with Strava")
   end
     
-  xscenario "logged in with Strava", vcr: true do
-    VCR.use_cassette("new review submission") do
+  scenario "logged in with Strava" do
       # As a logged in user
       page.set_rack_session(user_id: 1)
       # When I visit the site
@@ -54,7 +53,6 @@ describe "user is on the home page" do
       visit "/items/outerwear"
       # the item is visible
       expect(page).to have_content("My Brand New Jacket")
-    end
   end
 end
 # and I fill in the form with required information

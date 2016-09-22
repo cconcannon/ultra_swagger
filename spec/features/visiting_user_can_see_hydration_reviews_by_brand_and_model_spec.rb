@@ -1,11 +1,7 @@
 require "rails_helper"
 
 describe "visitor is looking at hydration packs" do
-  fixtures :users
-  fixtures :strava_user_totals
-  fixtures :races
-  fixtures :items
-  fixtures :reviews
+  fixtures :all
   
   scenario "they see reviews for an individual pack" do
     # As a visiting user
