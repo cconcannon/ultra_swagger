@@ -19,10 +19,10 @@
       <%= f.text_area(:comments, placeholder: "Comments") %>
         <h5>New Product Details</h5>
         <%= fields_for @review.item do |i| %>
-          <%= i.text_field(:type, placeholder: "Item Type") %>
+          <%= i.select(:type, options_for_select(@type_options), { include_blank: "Select Item Type" }) %>
           <%= i.text_field(:brand, placeholder: "Brand Name") %>
           <%= i.text_field(:model, placeholder: "Model Name") %>
-          <%= i.text_field(:sex, placeholder: "M/F") %>
+          <%= i.select(:sex, options_for_select(["M", "F", "Uni"]), { include_blank: "Select M/F/Unisex" }) %>
           <%= i.text_field(:image_path, { value: nil, placeholder: "Item Image URL" }) %>
         <% end %>
         <hr>

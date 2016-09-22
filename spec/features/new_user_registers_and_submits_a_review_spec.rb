@@ -20,7 +20,7 @@ describe "user is on the home page" do
     expect(page).to have_link("Login with Strava")
   end
     
-  scenario "logged in with Strava", vcr: true do
+  xscenario "logged in with Strava", vcr: true do
     VCR.use_cassette("new review submission") do
       # As a logged in user
       page.set_rack_session(user_id: 1)

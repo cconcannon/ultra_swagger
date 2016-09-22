@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://maps.googleapis.com/maps/api/geocode/json?address=Tahoe%20City,%20CA&key=AIzaSyBgMuiBzouR48EE-xRBqQ59rF7_y-WAsyk
+    uri: https://maps.googleapis.com/maps/api/geocode/json?address=%23%3CRace:0x007fb02f0609c8%3E&key=AIzaSyBgMuiBzouR48EE-xRBqQ59rF7_y-WAsyk
     body:
       encoding: US-ASCII
       string: ''
@@ -21,9 +21,9 @@ http_interactions:
       Content-Type:
       - application/json; charset=UTF-8
       Date:
-      - Wed, 21 Sep 2016 21:59:53 GMT
+      - Wed, 21 Sep 2016 21:49:56 GMT
       Expires:
-      - Thu, 22 Sep 2016 21:59:53 GMT
+      - Thu, 22 Sep 2016 21:49:56 GMT
       Cache-Control:
       - public, max-age=86400
       Vary:
@@ -33,7 +33,7 @@ http_interactions:
       Server:
       - mafe
       Content-Length:
-      - '439'
+      - '65'
       X-Xss-Protection:
       - 1; mode=block
       X-Frame-Options:
@@ -44,111 +44,9 @@ http_interactions:
       encoding: ASCII-8BIT
       string: |
         {
-           "results" : [
-              {
-                 "address_components" : [
-                    {
-                       "long_name" : "Tahoe City",
-                       "short_name" : "Tahoe City",
-                       "types" : [ "locality", "political" ]
-                    },
-                    {
-                       "long_name" : "Placer County",
-                       "short_name" : "Placer County",
-                       "types" : [ "administrative_area_level_2", "political" ]
-                    },
-                    {
-                       "long_name" : "California",
-                       "short_name" : "CA",
-                       "types" : [ "administrative_area_level_1", "political" ]
-                    },
-                    {
-                       "long_name" : "United States",
-                       "short_name" : "US",
-                       "types" : [ "country", "political" ]
-                    }
-                 ],
-                 "formatted_address" : "Tahoe City, CA, USA",
-                 "geometry" : {
-                    "bounds" : {
-                       "northeast" : {
-                          "lat" : 39.18213,
-                          "lng" : -120.1355329
-                       },
-                       "southwest" : {
-                          "lat" : 39.12889,
-                          "lng" : -120.1949481
-                       }
-                    },
-                    "location" : {
-                       "lat" : 39.1446803,
-                       "lng" : -120.1762494
-                    },
-                    "location_type" : "APPROXIMATE",
-                    "viewport" : {
-                       "northeast" : {
-                          "lat" : 39.18213,
-                          "lng" : -120.1355329
-                       },
-                       "southwest" : {
-                          "lat" : 39.12889,
-                          "lng" : -120.1949481
-                       }
-                    }
-                 },
-                 "place_id" : "ChIJIacfzy7Wm4AR0Z5sgTCymCo",
-                 "types" : [ "locality", "political" ]
-              }
-           ],
-           "status" : "OK"
+           "results" : [],
+           "status" : "ZERO_RESULTS"
         }
     http_version: 
-  recorded_at: Wed, 21 Sep 2016 21:59:53 GMT
-- request:
-    method: get
-    uri: https://api.darksky.net/forecast/9f0b41914913b8fb31ee1fb99bb23077/39.1446803,-120.1762494,1403676000
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      User-Agent:
-      - Faraday v0.9.2
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept:
-      - "*/*"
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Server:
-      - nginx/1.4.6 (Ubuntu)
-      Date:
-      - Wed, 21 Sep 2016 21:59:53 GMT
-      Content-Type:
-      - application/json; charset=utf-8
-      Transfer-Encoding:
-      - chunked
-      Connection:
-      - close
-      X-Forecast-Api-Calls:
-      - '6'
-      Cache-Control:
-      - max-age=3600
-      Expires:
-      - Wed, 21 Sep 2016 22:59:53 +0000
-      X-Content-Type-Options:
-      - nosniff
-      X-Response-Time:
-      - 58.192ms
-      X-Hostname:
-      - 88.api
-    body:
-      encoding: ASCII-8BIT
-      string: '{"latitude":39.1446803,"longitude":-120.1762494,"timezone":"America/Los_Angeles","offset":-7,"currently":{"time":1403676000,"summary":"Clear","icon":"clear-night","precipIntensity":0,"precipProbability":0,"temperature":56.02,"apparentTemperature":56.02,"dewPoint":39.45,"humidity":0.54,"windSpeed":1.3,"windBearing":239,"visibility":10,"cloudCover":0,"pressure":1013.96},"hourly":{"summary":"Clear
-        throughout the day.","icon":"clear-day","data":[{"time":1403593200,"summary":"Clear","icon":"clear-night","precipIntensity":0,"precipProbability":0,"temperature":55.52,"apparentTemperature":55.52,"dewPoint":31.9,"humidity":0.4,"windSpeed":3.63,"windBearing":246,"visibility":10,"cloudCover":0,"pressure":1013.86},{"time":1403596800,"summary":"Clear","icon":"clear-night","precipIntensity":0,"precipProbability":0,"temperature":55.56,"apparentTemperature":55.56,"dewPoint":31.87,"humidity":0.4,"windSpeed":1.33,"windBearing":156,"visibility":10,"cloudCover":0,"pressure":1013.81},{"time":1403600400,"summary":"Clear","icon":"clear-night","precipIntensity":0,"precipProbability":0,"temperature":52.52,"apparentTemperature":52.52,"dewPoint":32.17,"humidity":0.46,"windSpeed":0.96,"windBearing":329,"visibility":10,"cloudCover":0,"pressure":1013.75},{"time":1403604000,"summary":"Clear","icon":"clear-night","precipIntensity":0,"precipProbability":0,"temperature":51.22,"apparentTemperature":51.22,"dewPoint":31.67,"humidity":0.47,"windSpeed":2.2,"windBearing":131,"visibility":10,"cloudCover":0,"pressure":1013.82},{"time":1403607600,"summary":"Clear","icon":"clear-night","precipIntensity":0,"precipProbability":0,"temperature":48.77,"apparentTemperature":48.77,"dewPoint":31.11,"humidity":0.5,"windSpeed":1.32,"windBearing":225,"visibility":10,"cloudCover":0.04,"pressure":1013.57},{"time":1403611200,"summary":"Clear","icon":"clear-night","precipIntensity":0,"precipProbability":0,"temperature":47.56,"apparentTemperature":45.35,"dewPoint":32.03,"humidity":0.55,"windSpeed":5,"windBearing":90,"visibility":10,"cloudCover":0,"pressure":1014.03},{"time":1403614800,"summary":"Clear","icon":"clear-day","precipIntensity":0,"precipProbability":0,"temperature":46.79,"apparentTemperature":46.79,"dewPoint":31.72,"humidity":0.56,"windSpeed":2.04,"windBearing":264,"visibility":10,"cloudCover":0.04,"pressure":1014.26},{"time":1403618400,"summary":"Clear","icon":"clear-day","precipIntensity":0,"precipProbability":0,"temperature":50.74,"apparentTemperature":50.74,"dewPoint":31.22,"humidity":0.47,"windSpeed":3,"windBearing":100,"visibility":10,"cloudCover":0.15,"pressure":1014.54},{"time":1403622000,"summary":"Clear","icon":"clear-day","precipIntensity":0,"precipProbability":0,"temperature":57.15,"apparentTemperature":57.15,"dewPoint":31.23,"humidity":0.37,"windSpeed":6,"windBearing":170,"visibility":10,"cloudCover":0.2,"pressure":1014.27},{"time":1403625600,"summary":"Clear","icon":"clear-day","precipIntensity":0,"precipProbability":0,"temperature":63.87,"apparentTemperature":63.87,"dewPoint":32.6,"humidity":0.31,"windSpeed":2.6,"windBearing":77,"visibility":10,"cloudCover":0.12,"pressure":1014.03},{"time":1403629200,"summary":"Clear","icon":"clear-day","precipIntensity":0,"precipProbability":0,"temperature":68.81,"apparentTemperature":68.81,"dewPoint":32.08,"humidity":0.26,"windSpeed":0.9,"windBearing":54,"visibility":10,"cloudCover":0.12,"pressure":1013.39},{"time":1403632800,"summary":"Clear","icon":"clear-day","precipIntensity":0,"precipProbability":0,"temperature":73.72,"apparentTemperature":73.72,"dewPoint":32.28,"humidity":0.22,"windSpeed":3.74,"windBearing":42,"visibility":9.81,"cloudCover":0.15,"pressure":1013.41},{"time":1403636400,"summary":"Clear","icon":"clear-day","precipIntensity":0,"precipProbability":0,"temperature":75.88,"apparentTemperature":75.88,"dewPoint":28.3,"humidity":0.17,"windSpeed":6.9,"windBearing":182,"visibility":10,"cloudCover":0.15,"pressure":1013.44},{"time":1403640000,"summary":"Clear","icon":"clear-day","precipIntensity":0,"precipProbability":0,"temperature":77.5,"apparentTemperature":77.5,"dewPoint":27.53,"humidity":0.16,"windSpeed":8.12,"windBearing":210,"visibility":10,"cloudCover":0,"pressure":1013.27},{"time":1403643600,"summary":"Clear","icon":"clear-day","precipIntensity":0,"precipProbability":0,"temperature":78.41,"apparentTemperature":78.41,"dewPoint":29.95,"humidity":0.17,"windSpeed":8.55,"windBearing":222,"visibility":10,"cloudCover":0,"pressure":1013.22},{"time":1403647200,"summary":"Clear","icon":"clear-day","precipIntensity":0,"precipProbability":0,"temperature":78.54,"apparentTemperature":78.54,"dewPoint":29.9,"humidity":0.17,"windSpeed":11.18,"windBearing":226,"visibility":10,"cloudCover":0,"pressure":1013.16},{"time":1403650800,"summary":"Clear","icon":"clear-day","precipIntensity":0,"precipProbability":0,"temperature":77.59,"apparentTemperature":77.59,"dewPoint":32.54,"humidity":0.19,"windSpeed":14,"windBearing":271,"visibility":10,"cloudCover":0,"pressure":1013.09},{"time":1403654400,"summary":"Clear","icon":"clear-day","precipIntensity":0,"precipProbability":0,"temperature":75.82,"apparentTemperature":75.82,"dewPoint":35.59,"humidity":0.23,"windSpeed":13.61,"windBearing":267,"visibility":10,"cloudCover":0.15,"pressure":1013.1},{"time":1403658000,"summary":"Clear","icon":"clear-day","precipIntensity":0,"precipProbability":0,"temperature":73.49,"apparentTemperature":73.49,"dewPoint":37.84,"humidity":0.27,"windSpeed":10.19,"windBearing":245,"visibility":10,"cloudCover":0,"pressure":1013.24},{"time":1403661600,"summary":"Clear","icon":"clear-day","precipIntensity":0,"precipProbability":0,"temperature":71.28,"apparentTemperature":71.28,"dewPoint":37.81,"humidity":0.29,"windSpeed":8.73,"windBearing":247,"visibility":10,"cloudCover":0.04,"pressure":1013.45},{"time":1403665200,"summary":"Clear","icon":"clear-day","precipIntensity":0,"precipProbability":0,"temperature":68.26,"apparentTemperature":68.26,"dewPoint":38.26,"humidity":0.33,"windSpeed":7.61,"windBearing":257,"visibility":10,"cloudCover":0.04,"pressure":1013.29},{"time":1403668800,"summary":"Clear","icon":"clear-night","precipIntensity":0,"precipProbability":0,"temperature":64.01,"apparentTemperature":64.01,"dewPoint":38.94,"humidity":0.4,"windSpeed":4.19,"windBearing":256,"visibility":10,"cloudCover":0.04,"pressure":1013.31},{"time":1403672400,"summary":"Clear","icon":"clear-night","precipIntensity":0,"precipProbability":0,"temperature":59.34,"apparentTemperature":59.34,"dewPoint":38.82,"humidity":0.46,"windSpeed":1.09,"windBearing":261,"visibility":10,"cloudCover":0,"pressure":1013.62},{"time":1403676000,"summary":"Clear","icon":"clear-night","precipIntensity":0,"precipProbability":0,"temperature":56.02,"apparentTemperature":56.02,"dewPoint":39.45,"humidity":0.54,"windSpeed":1.3,"windBearing":239,"visibility":10,"cloudCover":0,"pressure":1013.96}]},"daily":{"data":[{"time":1403593200,"summary":"Clear
-        throughout the day.","icon":"clear-day","sunriseTime":1403613411,"sunsetTime":1403667116,"moonPhase":0.92,"precipIntensity":0,"precipIntensityMax":0,"precipProbability":0,"temperatureMin":46.79,"temperatureMinTime":1403614800,"temperatureMax":78.54,"temperatureMaxTime":1403647200,"apparentTemperatureMin":45.35,"apparentTemperatureMinTime":1403611200,"apparentTemperatureMax":78.54,"apparentTemperatureMaxTime":1403647200,"dewPoint":33.2,"humidity":0.35,"windSpeed":3.39,"windBearing":235,"visibility":9.99,"cloudCover":0.05,"pressure":1013.62}]},"flags":{"sources":["isd"],"isd-stations":["720549-99999","724880-23185","725845-23225","725846-93201","725847-93230"],"units":"us"}}'
-    http_version: 
-  recorded_at: Wed, 21 Sep 2016 21:59:53 GMT
+  recorded_at: Wed, 21 Sep 2016 21:49:56 GMT
 recorded_with: VCR 3.0.3
