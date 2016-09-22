@@ -37,6 +37,7 @@
         <% end %>
         <%= f.hidden_field(:user_id, value: @user.id) %>
         <%= f.submit "Submit Review", class: "callout button expanded" %>
+        <%= link_to "Powered by Dark Sky", "https://darksky.net/poweredby/" %>
       <% end %>
     </div>
   </div>

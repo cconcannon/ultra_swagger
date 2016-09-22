@@ -6,7 +6,7 @@ class ReviewsController < ApplicationController
     @item_options = Item.all.by_brand_model.map do |i|
       [[i.sex, i.brand, i.model].join(' '), i.id]
     end
-    @type_options = Item.pluck("type").uniq
+    @type_options = ["Shoe", "HydrationPack", "BaseLayer", "Outerwear"]
     @review = Review.new
     @review.item = Item.new
     @review.race = Race.new
