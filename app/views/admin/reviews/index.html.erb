@@ -2,6 +2,7 @@
 <hr>
 
 <div class='text-center' class='pending-reviews'>
+  <% cache cache_key_for(Review, "pending") do %>
   <h4>Pending Reviews</h4>
   <table>
     <tr>
@@ -26,9 +27,11 @@
     <% end %>
   </table>
   <hr>
+  <% end %>
 </div>
 
 <div class='text-center' class='rejected-reviews'>
+  <% cache cache_key_for(Review, "rejected") do %>
   <h4>Rejected Reviews</h4>
   <table>
     <tr>
@@ -51,5 +54,6 @@
     <% end %>
   </table>
   <hr>
+  <% end %>
 </div>
 

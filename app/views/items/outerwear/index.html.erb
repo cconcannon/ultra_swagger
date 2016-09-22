@@ -7,7 +7,9 @@
   <h1>Outerwear Reviews</h1>
   <hr>
 </div>
-  
+
+<% cache cache_key_for(Outerwear, "index") do %>
 <%= render partial: "partials/brand_checkbox_filter", locals: { brands: @brands } %>
 
 <%= render partial: "partials/items_display", locals: { items: @items } %>
+<% end %>
