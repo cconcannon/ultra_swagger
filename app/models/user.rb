@@ -20,8 +20,13 @@ class User < ApplicationRecord
   end
   
   def update_strava_user_total
-    strava_data = StravaUserTotal.new(user: self)
-    strava_data.update_data
-    strava_data
+    strava_data = StravaUserTotalService.new(self)
+    updated_data = strava_data.save_user_run_totals
+    binding.pry
+    updated_data
+  end
+  
+  def most_recent_strava_data
+    self.strava_user_totals.last
   end
 end

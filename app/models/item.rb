@@ -5,6 +5,7 @@ class Item < ApplicationRecord
   scope :outerwears, -> { where(type: "Outerwear") }
   scope :base_layers, -> { where(type: "Base Layer") }
   scope :hydration_packs, -> { where(type: "Hydration Pack") }
+  scope :by_brand_model, -> { order(:brand, :model, :sex) }
   
   def self.types
     %w(Shoe, Outerwear, Base Layer, Hydration Pack)
