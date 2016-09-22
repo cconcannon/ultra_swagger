@@ -19,7 +19,7 @@
         <td><%= link_to review.user.strava_id, "https://www.strava.com/athletes/#{review.user.strava_id}" %>
         <td><%= review.created_at.to_date %></td>
         <td><%= review.rating %></td>
-        <td><%= review.race.name %></td>
+        <td><%= link_to "#{review.race.name}", race_path(review.race) %></td>
         <td><%= review.comments %></td>
         <td><%= link_to "Approve", admin_review_path(review, approved: true), { method: :patch } %>
         <td><%= link_to "Reject", admin_review_path(review, approved: false), { method: :patch } %>

@@ -13,7 +13,7 @@
         <td><%= sub_review.created_at.to_date %></td>
         <td><%= sub_review.item.brand + " " + sub_review.item.model %></td>
         <td><%= sub_review.rating %></td>
-        <td><%= sub_review.race.name %></td>
+        <td><%= link_to "#{sub_review.race.name}", race_path(sub_review.race) %></td>
         <td><%= sub_review.comments %></td>
         <td><%= sub_review.admin_comments %></td>
       </tr>
