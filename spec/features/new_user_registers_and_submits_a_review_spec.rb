@@ -19,6 +19,24 @@ describe "user is on the home page" do
     # and the link to log in is on the page
     expect(page).to have_link("Login with Strava")
   end
+  
+  scenario "logged in with strava" do
+    page.set_rack_session(user_id: 1)
+    
+    visit "/reviews/new"
+    fill_in('review[rating]', with: '10')
+    fill_in('review[comments]', with: 'new description')
+    select('HydrationPack', from: "item[type]")
+    fill_in('item[brand]', with: "Salomon")
+    fill_in('item[model]', with: "Advanced Skin")
+    select('Uni', from: 'item[sex]')
+    fill_in('item[image_path]', with: 'aaaaaaa')
+    
+    select('Angeles Crest 100', from: 'review[race_id]')
+    click_on("Submit Review")
+    
+    expect(current_path).to eq(user_path(1))
+  end
 end
 # and I fill in the form with required information
 # and I click "Submit review"
