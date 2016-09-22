@@ -24,4 +24,11 @@ describe "admin is logged in" do
     # I don't see the review I just denied within the page
     expect(page).to_not have_content("blah blah blah")
   end
+  
+  scenario "they log out" do
+    page.set_rack_session(user_id: nil)
+    visit "/admin/reviews"
+    expect(page).to have_http_status(200)
+    expect(page).to_not have_content("Pending Reviews")
+  end
 end
