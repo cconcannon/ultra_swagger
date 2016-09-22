@@ -6,6 +6,7 @@ class ReviewsController < ApplicationController
     @item_options = Item.all.by_brand_model.map do |i|
       [[i.sex, i.brand, i.model].join(' '), i.id]
     end
+    @type_options = Item.pluck("type").uniq
     @review = Review.new
     @review.item = Item.new
     @review.race = Race.new
@@ -49,7 +50,7 @@ class ReviewsController < ApplicationController
     if params[:review][:item_id].to_i > 0
       Item.find(params[:review][:item_id])
     else
-      Item.find_or_create_by(item_params)
+      Item.create(item_params)
     end
   end
   
