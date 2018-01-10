@@ -2,6 +2,18 @@
 
 ## Ultra Swagger
 
+### Startup
+```git clone https://github.com/cconcannon/ultra_swagger.git```
+```cd ultra_swagger```
+
+to proceed, ruby must be installed on your local machine
+
+if bundle is not installed: ```gem install bundler```
+
+```bundle install```
+
+```rails s```
+
 ### Introduction
 Ultra Swagger was created as a self-directed project for module 3 of the back-end program at the Turing School of Software and Design. The technical expectations of the project were:
 * use an external OAuth provider to authenticate users
